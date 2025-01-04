@@ -45,7 +45,7 @@ profiles:
   #  url:
 
 interests:
-  - Optimization
+  - Discrete/Continuous Optimization
   - Online Learning
   - Algorithmic Game Theory
 
