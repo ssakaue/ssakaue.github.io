@@ -30,7 +30,16 @@ sections:
           size: cover
           position: center
           parallax: false
-  #- block: markdown
+  - block: resume-experience
+    id: experience
+    content:
+      username: admin
+    design:
+      # Hugo date format
+      date_format: 'January 2006'
+      # Education or Experience section first?
+      is_education_first: false
+#- block: markdown
   #  content:
   #    title: '📚 My Research'
   #    subtitle: ''
@@ -71,15 +80,6 @@ sections:
   #  design:
   #    view: article-grid
   #    columns: 1
-  - block: resume-experience
-    id: experience
-    content:
-      username: admin
-    design:
-      # Hugo date format
-      date_format: 'January 2006'
-      # Education or Experience section first?
-      is_education_first: false
   - block: collection
     id: news
     content:

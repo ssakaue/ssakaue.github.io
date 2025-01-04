@@ -9,7 +9,7 @@ main:
     weight: 10
   - name: Publications
     url: /#papers
-    weight: 11
+    weight: 12
 #  - name: Talks
 #    url: /#talks
 #    weight: 12
@@ -19,7 +19,7 @@ main:
   - name: Experience
     url: /#experience
     #url: experience/
-    weight: 12
+    weight: 11
 #  - name: Projects
 #    url: projects/
 #    weight: 30
