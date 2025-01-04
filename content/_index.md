@@ -1,7 +1,7 @@
 ---
 # Leave the homepage title empty to use the site title
 title: ""
-date: 2022-10-24
+date: 2025-01-04
 type: landing
 
 design:
@@ -21,12 +21,12 @@ sections:
     design:
       css_class: dark
       background:
-        color: black
+        color: black!50
         image:
           # Add your image background to `assets/media/`.
-          filename: stacked-peaks.svg
+          filename: IMG_2097.jpeg #stacked-peaks.svg
           filters:
-            brightness: 1.0
+            brightness: 0.2
           size: cover
           position: center
           parallax: false
@@ -70,10 +70,19 @@ sections:
   #  design:
   #    view: article-grid
   #    columns: 1
+  - block: resume-experience
+    id: experience
+    content:
+      username: admin
+    design:
+      # Hugo date format
+      date_format: 'January 2006'
+      # Education or Experience section first?
+      is_education_first: false
   - block: collection
     id: news
     content:
-      title: Recent News
+      title: Posts
       subtitle: ''
       text: ''
       # Page type to display. E.g. post, talk, publication...

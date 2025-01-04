@@ -10,8 +10,8 @@ first_name: Shinsaku
 last_name: Sakaue
 
 # Status emoji
-status:
-  icon: ☕️
+#status:
+#  icon: 
 
 # Is this the primary user of the site?
 superuser: true
@@ -20,12 +20,12 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Project Research Associate
+# role: Project Research Associate
 
 # Organizations/Affiliations to display in Biography blox
-organizations:
-  - name: UTokyo IST
-    url: https://www.i.u-tokyo.ac.jp/index_e.shtml
+# organizations:
+#   - name: UTokyo IST
+#     url: https://www.i.u-tokyo.ac.jp/index_e.shtml
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
@@ -34,15 +34,15 @@ profiles:
     url: 'mailto:sakaue@mist.i.u-tokyo.ac.jp'
     label: E-mail Me
   - icon: brands/x
-    url: 
+    url: 'https://x.com/shinsaku_sakaue'
   - icon: brands/github
-    url: 
-  - icon: brands/linkedin
-    url: 
+    url: 'https://github.com/ssakaue'
+  #- icon: brands/linkedin
+  #  url: 
   - icon: academicons/google-scholar
-    url: 
-  - icon: academicons/orcid
-    url: 
+    url: https://scholar.google.com/citations?user=9oTbrmEAAAAJ&hl=en
+  #- icon: academicons/orcid
+  #  url:
 
 interests:
   - Optimization
@@ -52,31 +52,37 @@ interests:
 education:
   - area: PhD Informatics
     institution: Kyoto University
-    date_start: 
+    date_start: 2018-10-01 
     date_end: 2020-03-31
-    summary:       
-    button:
-      text: 'Read Thesis'
-      url: 'https://example.com'
+    #summary:       
+    #button:
+    #  text: 'Read Thesis'
+    #  url: 'https://example.com'
   - area: MSc Information Science and Technology
     institution: The University of Tokyo
     date_start: 2014-04-01
     date_end: 2016-03-31
-    summary:
+    #summary:
   - area: BEng Mathematical Engineering
     institution: The University of Tokyo
     date_start: 2012-04-01
     date_end: 2014-03-31
-    summary:
+    #summary:
 work:
+  - position: Project Research Associate
+    company_name: UTokyo IST
+    company_url: 'https://www.i.u-tokyo.ac.jp/index_e.shtml'
+    company_logo: ''
+    date_start: 2020-04-01
+    date_end: ''
+    #summary: 
   - position: Researcher
     company_name: NTT CSLab
-    company_url: ''
+    company_url: 'https://www.rd.ntt/e/cs/'
     company_logo: ''
     date_start: 2016-04-01
     date_end: ''
-    summary: 
-
+    #summary: 
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
@@ -115,6 +121,4 @@ work:
 ---
 
 ## About Me
-**UNDER CONSTRUCTION. See my [current webpage](https://sites.google.com/view/shinsakusakaue/home).**
-
-Shinsaku Sakaue is a project research associate at UTokyo IST, researcher at NTT CSLab, and visiting scientist at RIKEN AIP. 
+I am a project research associate at [UTokyo IST](https://www.i.u-tokyo.ac.jp/index_e.shtml), researcher at [NTT CSLab](https://www.rd.ntt/e/cs/), and visiting scientist at [RIKEN AIP](https://aip.riken.jp/labs/generic_tech/seq_decision_making/?lang=en). 
