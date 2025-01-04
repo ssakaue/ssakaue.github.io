@@ -6,13 +6,13 @@ authors:
 date: '2023-05-01'
 publication_types:
 - paper-conference
-publication: '*Proceedings of the 26th International Conference on Artificial Intelligence and Statistics (AISTATS)*'
+publication: '*International Conference on Artificial Intelligence and Statistics (AISTATS)*'
 
 links:
 #- name: Paper
 #  url: ''
 url_pdf: 'https://proceedings.mlr.press/v206/sakaue23a.html'
-url_code: ''
+url_code: 'https://github.com/ssakaue/data-driven-lra-code'
 url_dataset: ''
 url_poster: ''
 url_project: ''

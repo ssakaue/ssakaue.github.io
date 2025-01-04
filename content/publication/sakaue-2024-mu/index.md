@@ -8,7 +8,7 @@ authors:
 date: '2024-07-01'
 publication_types:
 - paper-conference
-publication: '*Proceedings of the 37th Conference on Learning Theory (COLT)*'
+publication: '*Conference on Learning Theory (COLT)*'
 
 links:
 #- name: Paper

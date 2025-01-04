@@ -1,13 +1,23 @@
 ---
-title: Nearly Tight Spectral Sparsification of Directed Hypergraphs
+title: Nearly tight spectral sparsification of directed hypergraphs
 authors:
 - Kazusato Oko
 - Shinsaku Sakaue
-- Shin-Ichi Tanigawa
-date: '2023-01-01'
-publishDate: '2025-01-04T09:51:50.867662Z'
+- Shin–ichi Tanigawa
+date: '2023-07-10'
 publication_types:
 - paper-conference
-publication: '*50th International Colloquium on Automata, Languages, and Programming
-  (ICALP 2023)*'
+publication: '*International Colloquium on Automata, Languages, and Programming (ICALP)*'
+
+links:
+#- name: Paper
+#  url: ''
+url_pdf: 'https://drops.dagstuhl.de/entities/document/10.4230/LIPIcs.ICALP.2023.94'
+url_code: ''
+url_dataset: ''
+url_poster: ''
+url_project: ''
+url_slides: ''
+url_source: ''
+url_video: ''
 ---

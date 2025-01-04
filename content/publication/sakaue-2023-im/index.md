@@ -6,13 +6,13 @@ authors:
 date: '2023-08-01'
 publication_types:
 - paper-conference
-publication: '*Proceedings of the 40th International Conference on Machine Learning (ICML)*'
+publication: '*International Conference on Machine Learning (ICML)*'
 
 links:
 #- name: Paper
 #  url: ''
 url_pdf: 'https://proceedings.mlr.press/v202/sakaue23a.html'
-url_code: ''
+url_code: 'https://github.com/ssakaue/alps-l-convex-optset-code'
 url_dataset: ''
 url_poster: ''
 url_project: ''

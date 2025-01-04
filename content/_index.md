@@ -55,7 +55,7 @@ sections:
       title: Publications
       text: ""
       count: 0
-      filters:
+      filters: 
         folders:
           - publication
         exclude_featured: false

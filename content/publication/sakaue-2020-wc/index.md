@@ -1,12 +1,21 @@
 ---
-title: 'On Maximization of Weakly Modular Functions: Guarantees of Multi-stage Algorithms,
-  Tractability, and Hardness'
+title: 'On maximization of weakly modular functions: Guarantees of multi-stage algorithms, tractability, and hardness'
 authors:
 - Shinsaku Sakaue
-date: '2020-01-01'
-publishDate: '2025-01-04T09:51:50.976227Z'
+date: '2020-08-26'
 publication_types:
-- article-journal
-publication: '*AISTATS 2020 - 23rd International Conference on Artificial Intelligence
-  and Statistics*'
+- paper-conference
+publication: '*International Conference on Artificial Intelligence and Statistics (AISTATS)*'
+
+links:
+#- name: Paper
+#  url: ''
+url_pdf: 'https://proceedings.mlr.press/v108/sakaue20b.html'
+url_code: ''
+url_dataset: ''
+url_poster: ''
+url_project: ''
+url_slides: ''
+url_source: ''
+url_video: ''
 ---

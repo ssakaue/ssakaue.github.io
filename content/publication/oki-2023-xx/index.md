@@ -12,7 +12,7 @@ links:
 #- name: Paper
 #  url: ''
 url_pdf: 'https://proceedings.neurips.cc/paper_files/paper/2023/hash/d84c0dd9b1bfeee361f3268dcaebf849-Abstract-Conference.html'
-url_code: ''
+url_code: 'https://github.com/ssakaue/alps-m-convex-code'
 url_dataset: ''
 url_poster: ''
 url_project: ''

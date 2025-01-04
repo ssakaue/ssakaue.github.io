@@ -1,6 +1,5 @@
 ---
-title: Exact and Scalable Network Reliability Evaluation for Probabilistic Correlated
-  Failures
+title: Exact and scalable network reliability evaluation for probabilistic correlated failures
 authors:
 - Ryoma Onaka
 - Kengo Nakamura
@@ -8,9 +7,20 @@ authors:
 - Masaaki Nishino
 - Norihito Yasuda
 - Shinsaku Sakaue
-date: '2022-01-01'
-publishDate: '2025-01-04T09:51:50.927858Z'
+date: '2022-12-04'
 publication_types:
 - paper-conference
-publication: '*GLOBECOM 2022 - 2022 IEEE Global Communications Conference*'
+publication: '*IEEE Global Communications Conference (GLOBECOM)*'
+
+links:
+#- name: Paper
+#  url: ''
+url_pdf: 'https://ieeexplore.ieee.org/document/10001640'
+url_code: ''
+url_dataset: ''
+url_poster: ''
+url_project: ''
+url_slides: ''
+url_source: ''
+url_video: ''
 ---
