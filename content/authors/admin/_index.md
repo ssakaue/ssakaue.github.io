@@ -115,5 +115,6 @@ work:
 ---
 
 ## About Me
+**UNDER CONSTRUCTION. See my [current webpage](https://sites.google.com/view/shinsakusakaue/home).**
 
 Shinsaku Sakaue is a project research associate at UTokyo IST, researcher at NTT CSLab, and visiting scientist at RIKEN AIP. 
