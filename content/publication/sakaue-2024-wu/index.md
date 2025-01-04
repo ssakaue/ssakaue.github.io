@@ -1,10 +1,9 @@
 ---
-title: Generalization Bound and Learning Methods for Data-Driven Projections in Linear Programming
+title: Generalization bound and learning methods for data-driven projections in linear programming
 authors:
 - Shinsaku Sakaue
 - Taihei Oki
 date: '2024-12-01'
-publishDate: '2024-12-01'
 publication_types:
 - paper-conference
 publication: '*Advances in Neural Information Processing Systems (NeurIPS)*'

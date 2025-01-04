@@ -1,13 +1,22 @@
 ---
-title: 'Rethinking Warm-Starts with Predictions: Learning Predictions Close to Sets
-  of Optimal Solutions for Faster $textL$-/$textL^♮$-Convex Function Minimization'
+title: 'Rethinking warm-starts with predictions: Learning predictions close to sets of optimal solutions for faster $\mathrm{L}$-/$\mathrm{L}^\natural$-convex function minimization'
 authors:
 - Shinsaku Sakaue
 - Taihei Oki
-date: '2023-01-01'
-publishDate: '2025-01-04T09:51:50.897726Z'
+date: '2023-08-01'
 publication_types:
 - paper-conference
-publication: '*Proceedings of the 40th International Conference on Machine Learning
-  (ICML 2023)*'
+publication: '*Proceedings of the 40th International Conference on Machine Learning (ICML)*'
+
+links:
+#- name: Paper
+#  url: ''
+url_pdf: 'https://proceedings.mlr.press/v202/sakaue23a.html'
+url_code: ''
+url_dataset: ''
+url_poster: ''
+url_project: ''
+url_slides: ''
+url_source: ''
+url_video: ''
 ---

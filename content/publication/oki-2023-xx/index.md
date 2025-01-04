@@ -1,12 +1,22 @@
 ---
-title: 'Faster Discrete Convex Function Minimization with Predictions: The M-Convex
-  Case'
+title: 'Faster discrete convex function minimization with predictions: The M-convex case'
 authors:
 - Taihei Oki
 - Shinsaku Sakaue
-date: '2023-01-01'
-publishDate: '2025-01-04T09:51:50.891764Z'
+date: '2023-12-01'
 publication_types:
 - paper-conference
-publication: '*Advances in Neural Information Processing Systems*'
+publication: '*Advances in Neural Information Processing Systems (NeurIPS)*'
+
+links:
+#- name: Paper
+#  url: ''
+url_pdf: 'https://proceedings.neurips.cc/paper_files/paper/2023/hash/d84c0dd9b1bfeee361f3268dcaebf849-Abstract-Conference.html'
+url_code: ''
+url_dataset: ''
+url_poster: ''
+url_project: ''
+url_slides: ''
+url_source: ''
+url_video: ''
 ---

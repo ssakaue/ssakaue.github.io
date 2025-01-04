@@ -6,8 +6,19 @@ authors:
 - Akinori Fujino
 - Hisashi Kashima
 date: '2023-07-01'
-publishDate: '2025-01-04T09:51:50.861586Z'
 publication_types:
 - article-journal
-publication: '*Data mining and knowledge discovery*'
+publication: '*Data Mining and Knowledge Discovery*'
+
+links:
+#- name: Paper
+#  url: ''
+url_pdf: 'https://link.springer.com/article/10.1007/s10618-022-00885-6'
+url_code: ''
+url_dataset: ''
+url_poster: ''
+url_project: ''
+url_slides: ''
+url_source: ''
+url_video: ''
 ---
