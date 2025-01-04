@@ -1,6 +1,6 @@
 ---
-title: 'No-regret m̊ $M^♮$-Concave function maximization: Stochastic bandit algorithms
-  and Np-hardness of adversarial full-information setting'
+title: 'No-regret $M^♮$-Concave function maximization: Stochastic bandit algorithms
+  and NP-hardness of adversarial full-information setting'
 authors:
 - Taihei Oki
 - Shinsaku Sakaue
