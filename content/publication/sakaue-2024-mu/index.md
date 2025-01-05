@@ -18,7 +18,7 @@ url_code: ''
 url_dataset: ''
 url_poster: ''
 url_project: ''
-url_slides: ''
+url_slides: 'https://speakerdeck.com/ssakaue/online-structured-prediction-with-fenchel-young-losses-and-improved-surrogate-regret-for-online-multiclass-classification-with-logistic-loss'
 url_source: ''
 url_video: ''
 ---
