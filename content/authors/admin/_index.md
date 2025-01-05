@@ -70,14 +70,14 @@ education:
     #summary:
 work:
   - position: Project Research Associate
-    company_name: UTokyo IST
+    company_name: The University of Tokyo
     company_url: 'https://www.i.u-tokyo.ac.jp/index_e.shtml'
     company_logo: ''
     date_start: 2020-04-01
     date_end: ''
     #summary: 
   - position: Researcher
-    company_name: NTT CSLab
+    company_name: NTT Communication Science Laboratories
     company_url: 'https://www.rd.ntt/e/cs/'
     company_logo: ''
     date_start: 2016-04-01
