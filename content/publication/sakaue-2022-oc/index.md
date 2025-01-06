@@ -7,6 +7,7 @@ date: '2022-12-01'
 publication_types:
 - paper-conference
 publication: '*Advances in Neural Information Processing Systems (NeurIPS)*'
+featured: true
 
 links:
 #- name: Paper

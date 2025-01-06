@@ -9,6 +9,7 @@ date: '2024-07-01'
 publication_types:
 - paper-conference
 publication: '*Conference on Learning Theory (COLT)*'
+featured: true
 
 links:
 #- name: Paper
