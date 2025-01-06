@@ -67,7 +67,7 @@ education:
     #summary:
   - area: BEng Mathematical Engineering
     institution: The University of Tokyo
-    date_start: 2012-04-01
+    date_start: 2010-04-01
     date_end: 2014-03-31
     #summary:
 work:
