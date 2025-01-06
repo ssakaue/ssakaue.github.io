@@ -43,6 +43,8 @@ profiles:
     url: https://scholar.google.com/citations?user=9oTbrmEAAAAJ&hl=en
   #- icon: academicons/orcid
   #  url:
+  - icon: speaker-deck-brands-solid
+    url: https://speakerdeck.com/ssakaue
 
 interests:
   - Discrete/Continuous Optimization
