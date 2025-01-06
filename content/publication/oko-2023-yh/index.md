@@ -3,7 +3,7 @@ title: Nearly tight spectral sparsification of directed hypergraphs
 authors:
 - Kazusato Oko
 - Shinsaku Sakaue
-- Shin–ichi Tanigawa
+- "Shin‑ichi Tanigawa"
 date: '2023-07-10'
 publication_types:
 - paper-conference

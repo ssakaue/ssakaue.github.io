@@ -3,7 +3,7 @@ title: Efficient bandit combinatorial optimization algorithm with zero-suppresse
 authors:
 - Shinsaku Sakaue
 - Masakazu Ishihata
-- Shin–ichi Minato
+- Shin‑ichi Minato
 date: '2018-04-09'
 publication_types:
 - paper-conference
