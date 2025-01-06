@@ -51,6 +51,15 @@ sections:
   #      Use this area to speak to your mission. I'm a research scientist in the Moonshot team at DeepMind. I blog about machine learning, deep learning, and moonshots. I apply a range of qualitative and quantitative methods to comprehensively investigate the role of science and technology in the economy. Please reach out to collaborate 😃
   #  design:
   #    columns: '1'
+  - block: markdown
+    content: 
+      title: "Teaching"
+      text: |-
+        - Exercise course of geometry (2020–2024 Autumn, The University of Tokyo)
+        - Short exercise course of numerical methods (2020 Spring & Autumn, The University of Tokyo)
+        - Short exercise course of discrete methods (2022–2024 Spring & Autumn, The University of Tokyo)  
+      design:
+        view: list
   - block: collection
     id: papers
     content:
