@@ -71,6 +71,13 @@ education:
     date_end: 2014-03-31
     #summary:
 work:
+  - position: Visiting Scientist
+    company_name: RIKEN Center for Advanced Intelligence Project
+    company_url: 'https://aip.riken.jp/labs/generic_tech/seq_decision_making/?lang=en'
+    company_logo: ''
+    date_start: 2024-08-01
+    date_end: ''
+    #summary: 
   - position: Project Research Associate
     company_name: The University of Tokyo
     company_url: 'https://www.i.u-tokyo.ac.jp/index_e.shtml'
