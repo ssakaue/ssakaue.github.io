@@ -1,5 +1,5 @@
 ---
-title: 'Faster discrete convex function minimization with predictions: The M-convex case'
+title: 'Faster discrete convex function minimization with predictions: The $\mathrm{M}$-convex case'
 authors:
 - Taihei Oki
 - Shinsaku Sakaue
