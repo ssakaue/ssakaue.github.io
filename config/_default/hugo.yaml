@@ -26,7 +26,7 @@ build:
 enableGitInfo: false
 summaryLength: 30
 pagination:
-  pagerSize: 100 # length of publication list in a single page; default is 10
+  pagerSize: 10 # length of publication list in a single page; default is 10
 enableEmoji: true
 enableRobotsTXT: true
 footnotereturnlinkcontents: <sup>^</sup>
