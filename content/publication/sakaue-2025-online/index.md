@@ -69,7 +69,7 @@ Define $f_t\colon c\mapsto (\hat x_t - x_t)^\top c$ as the $t$-th cost function.
 Taking cost vectors, $\hat x_t - x_t$, to be chosen by an adversary, we can use standard online learning methods, such as the online gradient descent, to achieve 
 
 $$
-R_T^{c^*} \le \tilde R_T^{c^*} = \sum_{t=1}^T f_t(\hat c_t) - f_t(c^*) = O(\sqrt{T}).
+R_T^{c^*} \le \tilde R_T^{c^*} = \sum_{t=1}^T (f_t(\hat c_t) - f_t(c^*)) = O(\sqrt{T}).
 $$
 
 This ensures that the average regret vanishes as $T \to \infty$. 
@@ -93,7 +93,7 @@ We say a twice differentiable function $f\colon \R^n \to \R$ is *$\alpha$-exp-co
 #### Regret bound of ONS ([Hazan et al. 2007, Theorem 2](https://link.springer.com/article/10.1007/s10994-007-5016-8)).
 Let $\mathcal{K}$ be a convex set with diameter $D$ and $f_1,\dots,f_T\colon\R^n\to\R$ be $\alpha$-exp-concave loss functions. Assume $\| \nabla f_t(x) \| \le G$ for all $t$ and $x \in \mathcal{K}$. Let $\hat c_1,\dots,\hat c_T \in \mathcal{K}$ be the outputs of ONS. Then, for any $c^* \in \mathcal{K}$, it holds that  
 
-$$\sum_{t=1}^T f_t(\hat c_t) - f_t(c^*) = O\left( n\left( \frac{1}{\alpha} + GD \right) \log T \right).$$
+$$\sum_{t=1}^T (f_t(\hat c_t) - f_t(c^*)) = O\left( n\left( \frac{1}{\alpha} + GD \right) \log T \right).$$
 
 ---
 
@@ -121,7 +121,7 @@ Thus, those parameters are constant for $\eta = 1/8$.
 Therefore, ONS applied to $f_t$ satisfies 
 
 $$
-\sum_{t=1}^T f_t(\hat c_t) - f_t(c^*) = O\left(n\log T \right).
+\sum_{t=1}^T (f_t(\hat c_t) - f_t(c^*)) = O\left(n\log T \right).
 $$
 
 The remaining task is to bound $\tilde R_T^{c^*} = \sum_{t=1}^T (\hat x_t - x_t)^\top (\hat c_t - c^*)$, which upper bounds the regret $R_T^{c^*}$.
@@ -148,7 +148,7 @@ With $\eta = 1/8$, we obtain
 $$
 \frac{\tilde R_T^{c^*}}{2}
 \le 
-8\sum_{t=1}^T f_t(\hat c_t) - f_t(c^*) = 
+8\sum_{t=1}^T (f_t(\hat c_t) - f_t(c^*)) = 
 O(n\log T), 
 $$
 
