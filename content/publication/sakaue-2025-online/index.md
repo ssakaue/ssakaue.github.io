@@ -157,7 +157,7 @@ thus establishing $R_T^{c^*} \le \tilde R_T^{c^*} = O(n\log T)$.
 ### Related Topics
 
 The above definition of $f_t$ and the proof strategy are inspired by those used in MetaGrad ([Van Erven and Koolen NeurIPS 2016](https://papers.nips.cc/paper_files/paper/2016/hash/14cfdb59b5bda1fc245aadae15b1984a-Abstract.html), [Van Erven et al. JMLR 2021](https://www.jmlr.org/papers/v22/20-1444.html)). Interestingly, using MetaGrad, instead of ONS, adds robustness against the suboptimality of the agent's solutions, which is also discussed in our paper. 
-We have also obtained a lower bound of $R_T^{c^*} = \Omega(n)$ and an an upper bound of $R_T^{c^*} = O(1)$ for the case of $n=2$; the algorithm for $n=2$ is a simple variant of Besbes et al. Closing the $\log T$ gap for general $n$ is an interesting open problem.
+We have also obtained a lower bound of $R_T^{c^*} = \Omega(n)$ and an upper bound of $R_T^{c^*} = O(1)$ for the case of $n=2$; the algorithm for $n=2$ is a simple variant of Besbes et al. Closing the $\log T$ gap for general $n$ is an interesting open problem.
 
 [Another paper](https://ssakaue.github.io/publication/sakaue-2025-revisiting/) of ours, which will appear in AISTATS 2025, also studies online inverse linear optimization. 
 It views the problem as online convex optimization of a Fenchel–Young loss ([Blondel et al. JMLR 2020](https://jmlr.csail.mit.edu/papers/v21/19-021.html)) and presents a finite regret bound under the assumption that the agent's forward problems have a gap between the optimal and suboptimal objective values.
