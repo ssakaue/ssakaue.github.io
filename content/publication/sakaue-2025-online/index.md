@@ -53,19 +53,19 @@ Let $\hat x_t \in \mathop{\mathrm{\arg\,\max}}_{x \in X_t} {\hat c_t}^\top x$ de
 A natural performance measure for those predictions is the *regret*: 
 
 $$
-R_T^{c^*} \coloneqq \sum_{t=1}^T (x_t - \hat x_t)^\top c^*,
+R_T^{c^*} \coloneqq \sum_{t=1}^T {c^*}^\top(x_t - \hat x_t),
 $$
 
 which represents the cumulative gap between the optimal values and objective values achieved by following the predictions $\hat{c}_t$.
 Bärmann et al. also defined another convenient measure that upper bounds the regret: 
 
 $$
-\tilde R_T^{c^*} \coloneqq \sum_{t=1}^T (\hat x_t - x_t)^\top (\hat c_t - c^*) = \sum_{t=1}^T (\hat x_t - x_t)^\top \hat c_t + R_T^{c^*} \ge R_T^{c^*},
+\tilde R_T^{c^*} \coloneqq \sum_{t=1}^T (\hat c_t - c^*)^\top (\hat x_t - x_t) = \sum_{t=1}^T \hat c_t^\top (\hat x_t - x_t) + R_T^{c^*} \ge R_T^{c^*},
 $$
 
 where the last inequality is due to $x_t, \hat x_t \in X_t$ and the optimality of $\hat x_t$ for $\hat c_t$.
 This measure suggests how online learning can be applied.
-Define $f_t\colon c\mapsto (\hat x_t - x_t)^\top c$ as the $t$-th cost function. 
+Define $f_t\colon c\mapsto c^\top (\hat x_t - x_t)$ as the $t$-th cost function. 
 Taking cost vectors, $\hat x_t - x_t$, to be chosen by an adversary, we can use standard online learning methods, such as the online gradient descent, to achieve 
 
 $$
@@ -101,7 +101,7 @@ Our method simply applies ONS to appropriate exp-concave functions $f_t$.
 Let $\eta = 1/8$ (the reason for this choice will be clear later) and define $f_t\colon \R^n \to \R$ by
 
 $$
-f_t(c) \coloneqq - \eta (\hat x_t - x_t)^\top (\hat c_t - c) + \eta^2 \left( (\hat x_t - x_t)^\top (\hat c_t - c) \right)^2,
+f_t(c) \coloneqq - \eta (\hat c_t - c)^\top (\hat x_t - x_t) + \eta^2 \left( (\hat c_t - c)^\top (\hat x_t - x_t) \right)^2,
 $$
 
 where $x_t$ is the agent's optimal solution, $\hat c_t \in \mathbb{B}^n$ is the $t$-th prediction, and $\hat x_t \in \mathop{\mathrm{\arg\,\max}}_{x \in X_t} {\hat c_t}^\top x$. 
@@ -124,17 +124,17 @@ $$
 \sum_{t=1}^T (f_t(\hat c_t) - f_t(c^*)) = O\left(n\log T \right).
 $$
 
-The remaining task is to bound $\tilde R_T^{c^*} = \sum_{t=1}^T (\hat x_t - x_t)^\top (\hat c_t - c^*)$, which upper bounds the regret $R_T^{c^*}$.
+The remaining task is to bound $\tilde R_T^{c^*} = \sum_{t=1}^T (\hat c_t - c^*)^\top (\hat x_t - x_t)$, which upper bounds the regret $R_T^{c^*}$.
 For convenience, define 
 
 $$
-V_T^{c^*} \coloneqq \sum_{t=1}^T \left( (\hat x_t - x_t)^\top (\hat c_t - c^*) \right)^2.
+V_T^{c^*} \coloneqq \sum_{t=1}^T \left( (\hat c_t - c^*)^\top (\hat x_t - x_t) \right)^2.
 $$
 
-Due to $\hat c_t, c^* \in \mathbb{B}^n$, $\hat x_t, x_t \in X_t \subseteq \mathbb{B}^n$, and $(\hat x_t - x_t)^\top (\hat c_t - c^*) \ge 0$ (by the optimality of $\hat x_t$ and $x_t$ for $\hat c_t$ and $c^*$, respectively), we have 
+Due to $\hat c_t, c^* \in \mathbb{B}^n$, $\hat x_t, x_t \in X_t \subseteq \mathbb{B}^n$, and $(\hat c_t - c^*)^\top (\hat x_t - x_t) \ge 0$ (by the optimality of $\hat x_t$ and $x_t$ for $\hat c_t$ and $c^*$, respectively), we have 
 
 $$
-V_T^{c^*} \le 4\sum_{t=1}^T (\hat x_t - x_t)^\top (\hat c_t - c^*) = 4\tilde R_T^{c^*}.
+V_T^{c^*} \le 4\sum_{t=1}^T (\hat c_t - c^*)^\top (\hat x_t - x_t) = 4\tilde R_T^{c^*}.
 $$ 
 
 By using this and $f_t(\hat c_t) = 0$, which follows from the definition of $f_t$, we have
