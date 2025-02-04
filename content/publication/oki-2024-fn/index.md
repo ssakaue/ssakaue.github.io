@@ -11,7 +11,7 @@ publication: '*Advances in Neural Information Processing Systems (NeurIPS)*'
 links:
 #- name: Paper
 #  url: ''
-url_pdf: 'https://openreview.net/forum?id=NnoAj91HZX&noteId=CRvKzSjiTE'
+url_pdf: 'https://papers.nips.cc/paper_files/paper/2024/hash/698cfaf72a208aef2e78bcac55b74328-Abstract-Conference.html'
 url_code: ''
 url_dataset: ''
 url_poster: ''

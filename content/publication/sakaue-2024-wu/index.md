@@ -11,7 +11,7 @@ publication: '*Advances in Neural Information Processing Systems (NeurIPS)*'
 links:
 #- name: Paper
 #  url: 'https://openreview.net/forum?id=jHh804fZ5l&referrer=%5Bthe%20profile%20of%20Shinsaku%20Sakaue%5D(%2Fprofile%3Fid%3D~Shinsaku_Sakaue1)'
-url_pdf: 'https://openreview.net/forum?id=jHh804fZ5l&referrer=%5Bthe%20profile%20of%20Shinsaku%20Sakaue%5D(%2Fprofile%3Fid%3D~Shinsaku_Sakaue1)'
+url_pdf: 'https://papers.nips.cc/paper_files/paper/2024/hash/1780db9272f81961459f4906036ebc6f-Abstract-Conference.html'
 url_code: 'https://github.com/ssakaue/data-driven-projection-lp-code'
 url_dataset: ''
 url_poster: ''
