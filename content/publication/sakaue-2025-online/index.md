@@ -1,5 +1,5 @@
 ---
-title: 'Online Inverse Linear Optimization: Improved Regret Bound, Robustness to Suboptimality, and Toward Tight Regret Analysis'
+title: 'Online inverse linear optimization: Improved regret bound, robustness to suboptimality, and toward tight regret analysis'
 authors:
 - Shinsaku Sakaue
 - Taira Tsuchiya

@@ -1,5 +1,5 @@
 ---
-title: 'Inverse Optimization with Prediction Market: A Characterization of Scoring Rules for Elciting System States'
+title: 'Inverse optimization with prediction market: A characterization of scoring rules for elciting system states'
 authors:
 - Han Bao
 - Shinsaku Sakaue

@@ -1,5 +1,5 @@
 ---
-title: 'Revisiting Online Learning Approach to Inverse Linear Optimization: A Fenchel–Young Loss Perspective and Gap-Dependent Regret Analysis'
+title: 'Revisiting online learning approach to inverse linear optimization: A Fenchel–Young loss perspective and gap-dependent regret analysis'
 authors:
 - Shinsaku Sakaue
 - Han Bao
