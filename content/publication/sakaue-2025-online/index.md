@@ -38,7 +38,10 @@ $$
 $$
 
 where $c^* \in \R^n$ is the agent's internal objective vector, $X_t \subseteq \R^n$ is the $t$-th feasible set (which may be non-convex). 
-For simplicity, assume that $c^*$ and $X_1,\dots,X_t$ are contained in the unit ball, $\mathbb{B}^n$.
+Let $\mathbb{B}^n$ be the unit ball and assume the following conditions for simplicity:
+- $X_1,\dots,X_t$ are contained in $\frac12\mathbb{B}^n$, and 
+- $c^*$ is also contained in $\frac12\mathbb{B}^n$.
+
 For each $t$, let $x_t \in \mathop{\mathrm{\arg\,\max}}_{x \in X_t} {c^*}^\top x$ be an optimal solution taken by the agent.
 
 The goal of inverse optimization is to estimate the agent's objective vector $c^*$ based on the observed pairs of optimal solutions and feasible sets, $\{(x_t, X_t)\}_{t=1}^T$. 
@@ -98,24 +101,24 @@ $$\sum_{t=1}^T (f_t(\hat c_t) - f_t(c^*)) = O\left( n\left( \frac{1}{\alpha} + G
 ---
 
 Our method simply applies ONS to appropriate exp-concave functions $f_t$.
-Let $\eta = 1/8$ (the reason for this choice will be clear later) and define $f_t\colon \R^n \to \R$ by
+Let $\eta = 1/2$ (the reason for this choice will be clear later) and define $f_t\colon \R^n \to \R$ by
 
 $$
 f_t(c) \coloneqq - \eta (\hat c_t - c)^\top (\hat x_t - x_t) + \eta^2 \left( (\hat c_t - c)^\top (\hat x_t - x_t) \right)^2,
 $$
 
-where $x_t$ is the agent's optimal solution, $\hat c_t \in \mathbb{B}^n$ is the $t$-th prediction, and $\hat x_t \in \mathop{\mathrm{\arg\,\max}}_{x \in X_t} {\hat c_t}^\top x$. 
+where $x_t$ is the agent's optimal solution, $\hat c_t \in \frac12\mathbb{B}^n$ is the $t$-th prediction, and $\hat x_t \in \mathop{\mathrm{\arg\,\max}}_{x \in X_t} {\hat c_t}^\top x$. 
 
-Consider applying ONS to the above $f_t$, restricting the domain to $\mathbb{B}^n$. 
+Consider applying ONS to the above $f_t$, restricting the domain to $\frac12\mathbb{B}^n$. 
 To derive a regret bound, we need to evaluate the parameters, $G$, $D$, and $\alpha$, in the ONS regret bound. 
 In fact, these parameters are all constants. <details><summary>Here is the detailed calculation.</summary>
 
-For simplicity, let $g_t = \hat x_t - x_t$, which satisfies $\| g_t \| \le 2$ since $\hat x_t, x_t \in X_t \subseteq \mathbb{B}^n$.
+For simplicity, let $g_t = \hat x_t - x_t$, which satisfies $\| g_t \| \le 1$ since $\hat x_t, x_t \in X_t \subseteq \frac12\mathbb{B}^n$.
 
-- Since the domain is $\mathbb{B}^n$, we have $D = 2$.
-- By using $c, \hat c_t \in \mathbb{B}^n$, $\| g_t \| \le 2$, and $\eta = 1/8$, we have $$\| \nabla f_t(c) \| = \| \eta g_t - 2\eta^2 g_tg_t^\top (\hat c_t - c)\| \le 2\eta + 16\eta^2 \le 1/2$$ and $$\nabla f_t(c) \nabla f_t(c)^\top =  \eta^2 \left( 1 - 2 \eta g_t^\top (\hat c_t - c) \right)^2 g_t g_t^\top \preceq \eta^2 (1 + 8\eta)^2 g_t g_t^\top = 2 \nabla^2 f_t(c),$$ hence $G = \alpha = \frac{1}{2}$.
+- Since the domain is $\frac12\mathbb{B}^n$, we have $D = 1$.
+- By using $c, \hat c_t \in \frac12\mathbb{B}^n$, $\| g_t \| \le 1$, and $\eta = 1/2$, we have $$\| \nabla f_t(c) \| = \| \eta g_t - 2\eta^2 g_tg_t^\top (\hat c_t - c)\| \le \eta + 2\eta^2 \le 1$$ and $$\nabla f_t(c) \nabla f_t(c)^\top =  \eta^2 \left( 1 - 2 \eta g_t^\top (\hat c_t - c) \right)^2 g_t g_t^\top \preceq \eta^2 (1 + 2\eta)^2 g_t g_t^\top = 2\nabla^2 f_t(c),$$ hence $G = 1$ and $\alpha = \frac{1}{2}$.
 
-Thus, those parameters are constant for $\eta = 1/8$. 
+Thus, those parameters are constant for $\eta = 1/2$. 
 </details>
 
 Therefore, ONS applied to $f_t$ satisfies 
@@ -131,24 +134,24 @@ $$
 V_T^{c^*} \coloneqq \sum_{t=1}^T \left( (\hat c_t - c^*)^\top (\hat x_t - x_t) \right)^2.
 $$
 
-Due to $\hat c_t, c^* \in \mathbb{B}^n$, $\hat x_t, x_t \in X_t \subseteq \mathbb{B}^n$, and $(\hat c_t - c^*)^\top (\hat x_t - x_t) \ge 0$ (by the optimality of $\hat x_t$ and $x_t$ for $\hat c_t$ and $c^*$, respectively), we have 
+Due to $\hat c_t, c^* \in \frac12\mathbb{B}^n$, $\hat x_t, x_t \in X_t \subseteq \frac12\mathbb{B}^n$, and $(\hat c_t - c^*)^\top (\hat x_t - x_t) \ge 0$ (by the optimality of $\hat x_t$ and $x_t$ for $\hat c_t$ and $c^*$, respectively), we have 
 
 $$
-V_T^{c^*} \le 4\sum_{t=1}^T (\hat c_t - c^*)^\top (\hat x_t - x_t) = 4\tilde R_T^{c^*}.
+V_T^{c^*} \le \sum_{t=1}^T (\hat c_t - c^*)^\top (\hat x_t - x_t) = \tilde R_T^{c^*}.
 $$ 
 
 By using this and $f_t(\hat c_t) = 0$, which follows from the definition of $f_t$, we have
 
 $$
-\tilde R_T^{c^*} = - \sum_{t=1}^T \frac{f_t(c^*)}{\eta} + \eta V_T^{c^*} \le \sum_{t=1}^T \frac{f_t(\hat c_t) - f_t(c^*)}{\eta} + 4\eta \tilde R_T^{c^*}.
+\tilde R_T^{c^*} = - \sum_{t=1}^T \frac{f_t(c^*)}{\eta} + \eta V_T^{c^*} \le \sum_{t=1}^T \frac{f_t(\hat c_t) - f_t(c^*)}{\eta} + \eta \tilde R_T^{c^*}.
 $$
 
-With $\eta = 1/8$, we obtain 
+With $\eta = 1/2$, we obtain 
 
 $$
 \frac{\tilde R_T^{c^*}}{2}
 \le 
-8\sum_{t=1}^T (f_t(\hat c_t) - f_t(c^*)) = 
+2\sum_{t=1}^T (f_t(\hat c_t) - f_t(c^*)) = 
 O(n\log T), 
 $$
 
