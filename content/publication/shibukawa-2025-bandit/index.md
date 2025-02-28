@@ -8,7 +8,7 @@ authors:
 date: '2025-02-27'
 publication_types:
 - manuscript
-publication: '*arXiv [cs.LG]*'
+publication: '*arXiv [cs.LG, stat.ML]*'
 
 links:
 #- name: Paper
