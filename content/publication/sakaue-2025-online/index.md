@@ -18,7 +18,7 @@ url_code: ''
 url_dataset: ''
 url_poster: ''
 url_project: ''
-url_slides: ''
+url_slides: 'https://speakerdeck.com/ssakaue/online-inverse-linear-optimization'
 url_source: ''
 url_video: ''
 ---
