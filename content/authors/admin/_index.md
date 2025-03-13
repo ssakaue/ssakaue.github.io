@@ -20,7 +20,7 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-# role: Project Research Associate
+# role: Project Assistant Professor
 
 # Organizations/Affiliations to display in Biography blox
 # organizations:
@@ -78,7 +78,7 @@ work:
     date_start: 2024-08-01
     date_end: ''
     #summary: 
-  - position: Project Research Associate
+  - position: Project Assistant Professor
     company_name: The University of Tokyo
     company_url: 'https://www.i.u-tokyo.ac.jp/index_e.shtml'
     company_logo: ''
@@ -128,4 +128,4 @@ awards:
 ---
 
 ## About Me
-I am a project research associate at [UTokyo IST](https://www.i.u-tokyo.ac.jp/index_e.shtml), researcher at [NTT CSLab](https://www.rd.ntt/e/cs/), and visiting scientist at [RIKEN AIP](https://aip.riken.jp/labs/generic_tech/seq_decision_making/?lang=en). 
+I am a project assistant professor at [UTokyo IST](https://www.i.u-tokyo.ac.jp/index_e.shtml), researcher at [NTT CSLab](https://www.rd.ntt/e/cs/), and visiting scientist at [RIKEN AIP](https://aip.riken.jp/labs/generic_tech/seq_decision_making/?lang=en). 
