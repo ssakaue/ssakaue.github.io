@@ -31,7 +31,7 @@ highlight_name: true
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:sakaue@mist.i.u-tokyo.ac.jp'
+    url: 'mailto:shinsaku.sakaue@gmail.com'
     label: E-mail Me
   - icon: brands/x
     url: 'https://x.com/shinsaku_sakaue'
@@ -71,26 +71,33 @@ education:
     date_end: 2014-03-31
     #summary:
 work:
+  - position: Research Scientist
+    company_name: CyberAgent
+    company_url: 'https://research.cyberagent.ai/'
+    company_logo: ''
+    date_start: 2025-04-01
+    date_end: ''
+    #summary: 
   - position: Visiting Scientist
     company_name: RIKEN Center for Advanced Intelligence Project
     company_url: 'https://aip.riken.jp/labs/generic_tech/seq_decision_making/?lang=en'
     company_logo: ''
     date_start: 2024-08-01
-    date_end: ''
+    date_end: 2025-03-31
     #summary: 
   - position: Project Assistant Professor
     company_name: The University of Tokyo
     company_url: 'https://www.i.u-tokyo.ac.jp/index_e.shtml'
     company_logo: ''
     date_start: 2020-04-01
-    date_end: ''
+    date_end: 2025-03-31
     #summary: 
   - position: Researcher
     company_name: NTT Communication Science Laboratories
     company_url: 'https://www.rd.ntt/e/cs/'
     company_logo: ''
     date_start: 2016-04-01
-    date_end: ''
+    date_end: 2025-03-31
     #summary: 
 
 # Skills
@@ -128,4 +135,4 @@ awards:
 ---
 
 ## About Me
-I am a project assistant professor at [UTokyo IST](https://www.i.u-tokyo.ac.jp/index_e.shtml), researcher at [NTT CSLab](https://www.rd.ntt/e/cs/), and visiting scientist at [RIKEN AIP](https://aip.riken.jp/labs/generic_tech/seq_decision_making/?lang=en). 
+I am a research scientist at [CyberAgent](https://research.cyberagent.ai/). Previously, I was a project assistant professor at [UTokyo IST](https://www.i.u-tokyo.ac.jp/index_e.shtml), researcher at [NTT CSLab](https://www.rd.ntt/e/cs/), and visiting scientist at [RIKEN AIP](https://aip.riken.jp/labs/generic_tech/seq_decision_making/?lang=en). 
