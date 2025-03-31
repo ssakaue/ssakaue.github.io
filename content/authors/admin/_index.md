@@ -72,7 +72,7 @@ education:
     #summary:
 work:
   - position: Research Scientist
-    company_name: CyberAgent
+    company_name: CyberAgent AI Lab
     company_url: 'https://research.cyberagent.ai/'
     company_logo: ''
     date_start: 2025-04-01
@@ -135,4 +135,4 @@ awards:
 ---
 
 ## About Me
-I am a research scientist at [CyberAgent](https://research.cyberagent.ai/). Previously, I was a project assistant professor at [UTokyo IST](https://www.i.u-tokyo.ac.jp/index_e.shtml), researcher at [NTT CSLab](https://www.rd.ntt/e/cs/), and visiting scientist at [RIKEN AIP](https://aip.riken.jp/labs/generic_tech/seq_decision_making/?lang=en). 
+I am a research scientist at [CyberAgent AI Lab](https://research.cyberagent.ai/). Previously, I was a project assistant professor at [UTokyo IST](https://www.i.u-tokyo.ac.jp/index_e.shtml), researcher at [NTT CSLab](https://www.rd.ntt/e/cs/), and visiting scientist at [RIKEN AIP](https://aip.riken.jp/labs/generic_tech/seq_decision_making/?lang=en). 
