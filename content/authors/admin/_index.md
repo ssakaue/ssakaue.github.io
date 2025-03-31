@@ -136,4 +136,7 @@ awards:
 
 ## About Me
 I am a research scientist at [CyberAgent AI Lab](https://research.cyberagent.ai/). 
-Previously, I was a project assistant professor at [UTokyo IST](https://www.i.u-tokyo.ac.jp/index_e.shtml), researcher at [NTT CS Lab](https://www.rd.ntt/e/cs/), and visiting scientist at [RIKEN AIP](https://aip.riken.jp/labs/generic_tech/seq_decision_making/?lang=en). 
+Previously, I was 
+a visiting scientist at [RIKEN AIP](https://aip.riken.jp/labs/generic_tech/seq_decision_making/?lang=en), 
+project assistant professor at [UTokyo IST](https://www.i.u-tokyo.ac.jp/index_e.shtml), 
+and researcher at [NTT CS Lab](https://www.rd.ntt/e/cs/). 
