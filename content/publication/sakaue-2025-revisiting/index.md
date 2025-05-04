@@ -7,7 +7,7 @@ authors:
 date: '2025-05-01'
 publication_types:
 - paper-conference
-publication: '*International Conference on Artificial Intelligence and Statistics (AISTATS)'
+publication: '*International Conference on Artificial Intelligence and Statistics (AISTATS)*'
 
 links:
 #- name: Paper
