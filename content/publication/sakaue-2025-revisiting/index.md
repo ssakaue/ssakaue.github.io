@@ -4,7 +4,7 @@ authors:
 - Shinsaku Sakaue
 - Han Bao
 - Taira Tsuchiya
-date: '2025-01-01'
+date: '2025-05-01'
 publication_types:
 - paper-conference
 publication: '*International Conference on Artificial Intelligence and Statistics (AISTATS), to appear*'

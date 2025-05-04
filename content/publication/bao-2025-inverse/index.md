@@ -3,7 +3,7 @@ title: 'Inverse optimization with prediction market: A characterization of scori
 authors:
 - Han Bao
 - Shinsaku Sakaue
-date: '2025-01-01'
+date: '2025-05-01'
 publication_types:
 - paper-conference
 publication: '*International Conference on Artificial Intelligence and Statistics (AISTATS), to appear*'
