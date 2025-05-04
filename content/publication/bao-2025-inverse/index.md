@@ -11,7 +11,7 @@ publication: '*International Conference on Artificial Intelligence and Statistic
 links:
 #- name: Paper
 #  url: 'https://openreview.net/forum?id=jHh804fZ5l&referrer=%5Bthe%20profile%20of%20Shinsaku%20Sakaue%5D(%2Fprofile%3Fid%3D~Shinsaku_Sakaue1)'
-url_pdf: ''
+url_pdf: 'https://proceedings.mlr.press/v258/bao25a.html'
 url_code: ''
 url_dataset: ''
 url_poster: ''
