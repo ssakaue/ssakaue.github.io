@@ -166,7 +166,7 @@ $$\sum_{t=1}^T f_t(w_t) - \sum_{t=1}^T f_t(u_t) \lesssim G\sqrt{T(1 + P_T)}.$$
 [Zhang et al., NeurIPS '18: "Adaptive online learning in dynamic environments"](https://papers.nips.cc/paper_files/paper/2018/hash/10a5ab2db37feedfdeaab192ead4ac0e-Abstract.html)
 
 Other topics on learning rate tuning:
-- AdaGrad 
+- AdaGrad
 - Universal OCO
 - Parameter-free OCO
 - The Road Less Scheduled
