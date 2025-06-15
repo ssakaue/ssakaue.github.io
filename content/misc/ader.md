@@ -32,11 +32,7 @@ $$w_{t+1} = \arg\min_{w \in \mathcal{W}} \|w_t - \eta \nabla f_t(w_t) - w \|$$
 ## Static Regret Analysis
 By the Pythagorean theorem, 
 
-$$\|w_{t+1} - u\|^2 \leq \|w_t - \eta \nabla f_t(w_t) - u\|^2.$$
-
-Expanding the right-hand side,
-
-$$\|w_t - u\|^2 + \eta^2\|\nabla f_t(w_t)\|^2 - 2\eta \langle w_t - u, \nabla f_t(w_t) \rangle.$$
+$$\|w_{t+1} - u\|^2 \leq \|w_t - \eta \nabla f_t(w_t) - u\|^2 = \|w_t - u\|^2 + \eta^2\|\nabla f_t(w_t)\|^2 - 2\eta \langle w_t - u, \nabla f_t(w_t) \rangle.$$
 
 Since $\|\nabla f_t(w_t)\| \leq G$, 
 
@@ -162,9 +158,14 @@ Therefore, ignoring $\log\log T$, we obtain
 $$\sum_{t=1}^T f_t(w_t) - \sum_{t=1}^T f_t(u_t) \lesssim G\sqrt{T(1 + P_T)}.$$
 
 ## References and Related Topics
+
+**Reference**:
+
 [Zhang et al., NeurIPS '18: "Adaptive online learning in dynamic environments"](https://papers.nips.cc/paper_files/paper/2018/hash/10a5ab2db37feedfdeaab192ead4ac0e-Abstract.html)
 
-Other topics on learning rate tuning:
+Their proof eliminates the $\log\log T$ factor by a more careful analysis of the Hedge algorithm with a more sophisticated choice of initial weights.
+
+**Other topics on learning rate tuning**:
 - AdaGrad
 - Universal OCO
 - Parameter-free OCO
