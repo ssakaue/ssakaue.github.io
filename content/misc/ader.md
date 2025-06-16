@@ -1,6 +1,6 @@
 # The Ader Algorithm  (Zhang et al. 2018)
 
-I describe the basic idea of [Zhang et al., NeurIPS '18: "Adaptive online learning in dynamic environments,"](https://papers.nips.cc/paper_files/paper/2018/hash/10a5ab2db37feedfdeaab192ead4ac0e-Abstract.html) which is a nice application of the multiple-learning-rate technique. The following analysis, which has an extra $\log\log T$, is looser than the original paper, but I hope it is easier to understand.
+I describe the basic idea of [Zhang et al., NeurIPS '18: "Adaptive online learning in dynamic environments,"](https://papers.nips.cc/paper_files/paper/2018/hash/10a5ab2db37feedfdeaab192ead4ac0e-Abstract.html) which is a nice application of the multiple-learning-rate technique.
 
 
 ## Problem Setting
@@ -12,7 +12,7 @@ I describe the basic idea of [Zhang et al., NeurIPS '18: "Adaptive online learni
 ### Online Learning Protocol
 For $t = 1, 2, \ldots, T$:
 1. Learner plays $w_t \in \mathcal{W}$ ($w_1$ is arbitrary).
-2. Environment reveals $f_t$ (provides gradient access for every $w \in \mathcal{W}$).
+2. Environment reveals $f_t$ (offering gradient access for any $w \in \mathcal{W}$).
 3. Learner incurs loss $f_t(w_t)$ and computes $w_{t+1} \in \mathcal{W}$ based on observed information.
 
 ### Regret and Dynamic Regret
@@ -32,7 +32,15 @@ $$w_{t+1} = \arg\min_{w \in \mathcal{W}} \|w_t - \eta \nabla f_t(w_t) - w \|$$
 ## Static Regret Analysis
 By the Pythagorean theorem, 
 
-$$\|w_{t+1} - u\|^2 \leq \|w_t - \eta \nabla f_t(w_t) - u\|^2 = \|w_t - u\|^2 + \eta^2\|\nabla f_t(w_t)\|^2 - 2\eta \langle w_t - u, \nabla f_t(w_t) \rangle.$$
+$$
+\begin{aligned}
+&\|w_{t+1} - u\|^2 
+\\
+\leq{}& \|w_t - \eta \nabla f_t(w_t) - u\|^2 
+\\
+={}& \|w_t - u\|^2 + \eta^2\|\nabla f_t(w_t)\|^2 - 2\eta \langle w_t - u, \nabla f_t(w_t) \rangle.
+\end{aligned}
+$$
 
 Since $\|\nabla f_t(w_t)\| \leq G$, 
 
@@ -40,7 +48,14 @@ $$\|w_{t+1} - u\|^2 \leq \|w_t - u\|^2 + \eta^2 G^2 - 2\eta \langle w_t - u, \na
 
 By telescoping and $\|w_1 - u\|^2 \leq 1$, 
 
-$$\sum_{t=1}^T \langle w_t - u, \nabla f_t(w_t) \rangle \leq \frac{1}{2\eta}\left(\|w_1 - u\|^2 - \|w_{T+1} - u\|^2\right) + \frac{\eta G^2 T}{2} \leq \frac{1}{2\eta} + \frac{\eta G^2 T}{2}$$
+$$
+\begin{aligned}
+\sum_{t=1}^T \langle w_t - u, \nabla f_t(w_t) \rangle 
+&\leq \frac{1}{2\eta}\left(\|w_1 - u\|^2 - \|w_{T+1} - u\|^2\right) + \frac{\eta G^2 T}{2} 
+\\
+&\leq \frac{1}{2\eta} + \frac{\eta G^2 T}{2}
+\end{aligned}
+$$
 
 From convexity, $f_t(w_t) - f_t(u) \leq \langle w_t - u, \nabla f_t(w_t) \rangle$, hence 
 
@@ -57,7 +72,7 @@ $$\sum_{t=1}^T f_t(w_t) - \sum_{t=1}^T f_t(u) \leq G\sqrt{T}.$$
 
 By similar analysis,
 
-$$\sum_{t=1}^T f_t(w_t) - \sum_{t=1}^T f_t(u_t) \leq \sum_{t=1}^T \left(\frac{\|w_t - u_t\|^2 - \|w_{t+1} - u_t\|^2}{2\eta}\right) + \frac{\eta G^2 T}{2}.$$
+$$\sum_{t=1}^T f_t(w_t) - \sum_{t=1}^T f_t(u_t) \leq \sum_{t=1}^T \frac{\|w_t - u_t\|^2 - \|w_{t+1} - u_t\|^2}{2\eta} + \frac{\eta G^2 T}{2}.$$
 
 The first sum on the r.h.s. is at most
 
@@ -65,7 +80,13 @@ $$\|w_1 - u_1\|^2 + \sum_{t=2}^T \left( \|w_t - u_t\|^2 - \|w_t - u_{t-1}\|^2 \r
 
 By the triangle inequality, the summand is at most
 
-$$(\|w_t - u_t\| + \|w_t - u_{t-1}\|)(\|w_t - u_t\| - \|w_t - u_{t-1}\|) \le 2 \|u_t - u_{t-1}\|.$$
+$$
+\begin{aligned}
+&(\|w_t - u_t\| + \|w_t - u_{t-1}\|)(\|w_t - u_t\| - \|w_t - u_{t-1}\|) 
+\\
+\le{}& 2 \|u_t - u_{t-1}\|.
+\end{aligned}
+$$
 
 Therefore, we have 
 
@@ -107,7 +128,7 @@ For every expert $i$, we have
 
 $$\sum_{t=1}^T f_t(w_t^i) - \sum_{t=1}^T f_t(u_t) \lesssim \frac{1 + P_T}{\eta_i} + \eta_i G^2 T.$$
 
-### Expert Problem Formulation
+### Expert Problem
 - There are $N$ experts $i = 1, 2, \ldots, N$.
 - At round $t$, expert $i$ incurs loss $\ell_{t,i} \in [0, H]$.
 
@@ -124,10 +145,9 @@ where $\epsilon = \frac{1}{H}\sqrt{\frac{\log N}{T}}.$
 
 The regret against any expert $i^*$ is bounded as follows:
 
-$$\text{Regret}(i^*) = \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \ell_{t,i^*} \lesssim \sqrt{T \log N}$$
+$$\text{Regret}(i^*) = \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \ell_{t,i^*} \lesssim \sqrt{T \log N}.$$
 
 See, e.g., [Hazan's book](https://arxiv.org/abs/1909.05207) for the proof. 
-(If there is a perfect expert, it is easy to see that the $\log N$ regret is possible via bisection).
 
 ### Combining for Dynamic Regret Bound
 At each $t$:
@@ -142,7 +162,14 @@ $$\sum_{t=1}^T f_t(w_t) - \sum_{t=1}^T f_t(w_t^{i^*}) \leq \sum_{t=1}^T \langle 
 
 If $p_t \in \Delta^{N}$ is computed by Hedge, the r.h.s. is bounded by
 
-$$\sum_{t=1}^T \langle g_t, \sum_i p_{t,i} w_t^i  \rangle - \sum_{t=1}^T \langle g_t, w_t^{i^*} \rangle = \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \ell_{t,i^*} \lesssim G\sqrt{T \log N}.$$
+$$
+\begin{aligned}
+\sum_{t=1}^T \left\langle g_t, \sum_i p_{t,i} w_t^i  \right\rangle - \sum_{t=1}^T \langle g_t, w_t^{i^*} \rangle 
+&= \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \ell_{t,i^*} 
+\\
+&\lesssim G\sqrt{T \log N}.
+\end{aligned}
+$$
 
 In particular, this is true for $i^* = k \in \mathcal{E}$ such that $\eta_k \leq \eta^* \leq 2\eta_k$. 
 
@@ -152,7 +179,14 @@ $$\sum_{t=1}^T f_t(w_t) - \sum_{t=1}^T f_t(w_t^k) \lesssim G\sqrt{T \log \log T}
 
 - **Expert $k$'s regret**: Recalling $\eta^* = \frac{1}{G}\sqrt{\frac{1 + P_T}{T}}$, 
 
-$$\sum_{t=1}^T f_t(w_t^k) - \sum_{t=1}^T f_t(u_t) \lesssim \frac{1 + P_T}{\eta_k} + \eta_k G^2 T \le \frac{1 + P_T}{\eta^*/2} + \eta^* G^2 T \lesssim G\sqrt{T(1 + P_T)}.$$
+$$
+\begin{aligned}
+\sum_{t=1}^T f_t(w_t^k) - \sum_{t=1}^T f_t(u_t) 
+& \lesssim \frac{1 + P_T}{\eta_k} + \eta_k G^2 T 
+\\
+&\le \frac{1 + P_T}{\eta^*/2} + \eta^* G^2 T \lesssim G\sqrt{T(1 + P_T)}.
+\end{aligned}
+$$
 
 Therefore, ignoring $\log\log T$, we obtain
 
@@ -164,17 +198,24 @@ $$\sum_{t=1}^T f_t(w_t) - \sum_{t=1}^T f_t(u_t) \lesssim G\sqrt{T(1 + P_T)}.$$
 
 [Zhang et al., NeurIPS '18: "Adaptive online learning in dynamic environments"](https://papers.nips.cc/paper_files/paper/2018/hash/10a5ab2db37feedfdeaab192ead4ac0e-Abstract.html)
 
-Their proof eliminates the $\log\log T$ factor by a more careful analysis of the Hedge algorithm with a more sophisticated choice of initial probabilities. 
+Their proof eliminates the $\log\log T$ factor by a more careful analysis of the Hedge algorithm with a more sophisticated choice of initial probability. 
 <details><summary>Proof sketch</summary>
-By setting the initial probabilities $p_{t,i} \propto \frac{1}{i(i+1)}$, we can show 
+By setting the initial probability as $p_{1,i} \propto \frac{1}{i(i+1)}$, we can show 
 
-$$\text{Regret}(i^*) = \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \ell_{t,i^*} \lesssim \frac{1}{\varepsilon}\ln i^* + \varepsilon \sum_{t=1}^T \langle p_t, \ell_t^2 \rangle \lesssim \frac{1}{\varepsilon}\ln i^* + \varepsilon G^2T.$$
+$$
+\begin{aligned}
+\text{Regret}(i^*) = \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \ell_{t,i^*} 
+&\lesssim \frac{1}{\varepsilon}\ln \frac{1}{p_{1,i^*}} + \varepsilon \sum_{t=1}^T \langle p_t, \ell_t^2 \rangle 
+\\
+&\lesssim \frac{1}{\varepsilon}\ln i^* + \varepsilon G^2T.
+\end{aligned}
+$$
 
 With $\varepsilon \simeq \frac{1}{G\sqrt{T}}$, for $i^* = k$, we get $\text{Regret}(k) \lesssim G\sqrt{T}\ln k.$
 From $\eta_k \le \eta^*$, we can show $k \lesssim \log_2(1 + P_T)$, and hence the $\log\log T$ factor reduces to $\log\log(1 + P_T)$, which is ignorable. 
 </details>
 
-
+Subsequent works obtained data-dependent bounds, e.g., [Zhao et al. JMLR 2024.](https://jmlr.org/papers/v25/21-0748.html)
 
 **Other topics on learning rate tuning**:
 - AdaGrad
