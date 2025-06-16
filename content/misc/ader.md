@@ -1,6 +1,6 @@
-# The Ader Algorithm  (Zhang et al. NeurIPS 2018)
+# The Ader Algorithm  (Zhang et al. 2018)
 
-I describe the basic idea of [Zhang et al., NeurIPS '18: "Adaptive online learning in dynamic environments,"](https://papers.nips.cc/paper_files/paper/2018/hash/10a5ab2db37feedfdeaab192ead4ac0e-Abstract.html) which I believe is a nice application of the multiple-learning-rate technique. The following analysis, which has an extra $\log\log T$, is looser than the original paper, but I hope it is easier to understand.
+I describe the basic idea of [Zhang et al., NeurIPS '18: "Adaptive online learning in dynamic environments,"](https://papers.nips.cc/paper_files/paper/2018/hash/10a5ab2db37feedfdeaab192ead4ac0e-Abstract.html) which is a nice application of the multiple-learning-rate technique. The following analysis, which has an extra $\log\log T$, is looser than the original paper, but I hope it is easier to understand.
 
 
 ## Problem Setting
@@ -118,7 +118,7 @@ $$\text{Regret}(i^*) = \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \
 ### Hedge Algorithm
 Assign smaller probabilities to experts with larger cumulative losses:
 
-$$w_{t,i} \propto \exp(-\epsilon \sum_{s=1}^{t-1} \ell_{s,i}),$$ 
+$$p_{t,i} \propto \exp\left(-\epsilon \sum_{s=1}^{t-1} \ell_{s,i}\right),$$ 
 
 where $\epsilon = \frac{1}{H}\sqrt{\frac{\log N}{T}}.$
 
@@ -126,7 +126,8 @@ The regret against any expert $i^*$ is bounded as follows:
 
 $$\text{Regret}(i^*) = \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \ell_{t,i^*} \lesssim \sqrt{T \log N}$$
 
-See, e.g., [Hazan's book](https://arxiv.org/abs/1909.05207) for the proof (if there is a perfect expert, the $\log N$ regret is possible via bisection).
+See, e.g., [Hazan's book](https://arxiv.org/abs/1909.05207) for the proof. 
+(If there is a perfect expert, it is easy to see that the $\log N$ regret is possible via bisection).
 
 ### Combining for Dynamic Regret Bound
 At each $t$:
@@ -163,7 +164,17 @@ $$\sum_{t=1}^T f_t(w_t) - \sum_{t=1}^T f_t(u_t) \lesssim G\sqrt{T(1 + P_T)}.$$
 
 [Zhang et al., NeurIPS '18: "Adaptive online learning in dynamic environments"](https://papers.nips.cc/paper_files/paper/2018/hash/10a5ab2db37feedfdeaab192ead4ac0e-Abstract.html)
 
-Their proof eliminates the $\log\log T$ factor by a more careful analysis of the Hedge algorithm with a more sophisticated choice of initial weights.
+Their proof eliminates the $\log\log T$ factor by a more careful analysis of the Hedge algorithm with a more sophisticated choice of initial probabilities. 
+<details><summary>Proof sketch</summary>
+By setting the initial probabilities $p_{t,i} \propto \frac{1}{i(i+1)}$, we can show 
+
+$$\text{Regret}(i^*) = \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \ell_{t,i^*} \lesssim \frac{1}{\varepsilon}\ln i^* + \varepsilon \sum_{t=1}^T \langle p_t, \ell_t^2 \rangle \lesssim \frac{1}{\varepsilon}\ln i^* + \varepsilon G^2T.$$
+
+With $\varepsilon \simeq \frac{1}{G\sqrt{T}}$, for $i^* = k$, we get $\text{Regret}(k) \lesssim G\sqrt{T}\ln k.$
+From $\eta_k \le \eta^*$, we can show $k \lesssim \log_2(1 + P_T)$, and hence the $\log\log T$ factor reduces to $\log\log(1 + P_T)$, which is ignorable. 
+</details>
+
+
 
 **Other topics on learning rate tuning**:
 - AdaGrad
