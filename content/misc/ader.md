@@ -1,6 +1,21 @@
-# The Ader Algorithm  (Zhang et al. 2018)
+---
+title: Optimal Dynamic Regret via Multiple Learning Rates
+summary: This post describes Ader (Zhang et al. NeurIPS 2018), which achieves the optimal dynamic regret bound in OCO by running OGD with multiple learning rates and aggregating the outputs. 
+date: 2025-06-18
 
-I describe the basic idea of [Zhang et al., NeurIPS '18: "Adaptive online learning in dynamic environments,"](https://papers.nips.cc/paper_files/paper/2018/hash/10a5ab2db37feedfdeaab192ead4ac0e-Abstract.html) which is a nice application of the multiple-learning-rate technique.
+# Featured image
+# Place an image named `featured.jpg/png` in this page's folder and customize its options here.
+#image:
+#  caption: 'Image credit: [**Unsplash**](https://unsplash.com)'
+#
+#authors:
+#  - Shinsaku Sakaue
+#
+#tags:
+#  - Online convex optimization
+---
+
+I describe the basic idea of [Zhang et al., NeurIPS '18: "Adaptive online learning in dynamic environments,"](https://papers.nips.cc/paper_files/paper/2018/hash/10a5ab2db37feedfdeaab192ead4ac0e-Abstract.html) which is a nice application of the multiple-learning-rate technique to non-stationary online convex optimization (OCO).
 
 
 ## Problem Setting
