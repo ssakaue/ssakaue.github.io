@@ -15,7 +15,10 @@ date: 2025-06-18
 #  - Online convex optimization
 ---
 
-I describe the basic idea of [Zhang et al., NeurIPS '18: "Adaptive online learning in dynamic environments,"](https://papers.nips.cc/paper_files/paper/2018/hash/10a5ab2db37feedfdeaab192ead4ac0e-Abstract.html) which is a nice application of the multiple-learning-rate technique to non-stationary online convex optimization (OCO).
+I describe the basic idea of [Zhang et al., NeurIPS '18: "Adaptive online learning in dynamic environments,"](https://papers.nips.cc/paper_files/paper/2018/hash/10a5ab2db37feedfdeaab192ead4ac0e-Abstract.html) which is a nice application of the multiple-learning-rate technique to non-stationary online convex optimization (OCO). 
+The algorithm achieves an $O(\sqrt{T(1+P_T)})$ dynamic regret bound, where $P_T$ is the path length. 
+Before this work, the best known upper bound was $O((1+P_T)\sqrt{T})$ due to [Zinkevich (2003).](https://dl.acm.org/doi/10.5555/3041838.3041955)
+Zhang et al. (2018) also provides a lower bound of $\Omega(\sqrt{T(1+P_T)})$, hence the bound is optimal.
 
 
 ## Problem Setting
@@ -68,7 +71,7 @@ $$
 \sum_{t=1}^T \langle w_t - u, \nabla f_t(w_t) \rangle 
 &\leq \frac{1}{2\eta}\left(\|w_1 - u\|^2 - \|w_{T+1} - u\|^2\right) + \frac{\eta G^2 T}{2} 
 \\
-&\leq \frac{1}{2\eta} + \frac{\eta G^2 T}{2}
+&\leq \frac{1}{2\eta} + \frac{\eta G^2 T}{2}.
 \end{aligned}
 $$
 
@@ -145,42 +148,40 @@ $$\sum_{t=1}^T f_t(w_t^i) - \sum_{t=1}^T f_t(u_t) \lesssim \frac{1 + P_T}{\eta_i
 
 ### Expert Problem
 - There are $N$ experts $i = 1, 2, \ldots, N$.
-- At round $t$, expert $i$ incurs loss $\ell_{t,i} \in [0, H]$.
+- At round $t$, expert $i$ incurs loss $\ell_{t}(i) \in [0, H]$.
 
 We compute $p_t \in \triangle^N$ based on history $\ell_1, \ldots, \ell_{t-1} \in [0, H]^N$ to compete against any expert $i^*$ in expectation:
 
-$$\text{Regret}(i^*) = \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \ell_{t,i^*}.$$
+$$\text{Regret}(i^*) = \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \ell_{t}(i^*).$$
 
 ### Hedge Algorithm
-Assign smaller probabilities to experts with larger cumulative losses:
+Let $\epsilon = \frac{1}{H}\sqrt{\frac{\log N}{T}}$ and assign smaller probabilities to experts with larger cumulative losses:
 
-$$p_{t,i} \propto \exp\left(-\epsilon \sum_{s=1}^{t-1} \ell_{s,i}\right),$$ 
+$$p_{t,i} \propto \exp\left(-\epsilon \sum_{s=1}^{t-1} \ell_{s}(i) \right).$$ 
 
-where $\epsilon = \frac{1}{H}\sqrt{\frac{\log N}{T}}.$
+The regret against any expert $i^*$ is bounded as follows (see, e.g., [Hazan's book](https://arxiv.org/abs/1909.05207) for the proof):
 
-The regret against any expert $i^*$ is bounded as follows:
+$$\text{Regret}(i^*) = \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \ell_{t}(i^*) \lesssim H\sqrt{T \log N}.$$
 
-$$\text{Regret}(i^*) = \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \ell_{t,i^*} \lesssim \sqrt{T \log N}.$$
-
-See, e.g., [Hazan's book](https://arxiv.org/abs/1909.05207) for the proof. 
+ 
 
 ### Combining for Dynamic Regret Bound
 At each $t$:
 - Expert $i$ computes $w_t^i$ by OGD with $\eta_i$.
 - Learner outputs $w_t = \sum_{i=1}^N p_{t,i} w_t^i$.
 
-Define $\ell_{t,i} \coloneqq \langle w_t^i, g_t \rangle + G \in [0, 2G]$, where $g_t = \nabla f_t(w_t)$.
+Define $\ell_{t}(i) \coloneqq \langle w_t^i, g_t \rangle + G \in [0, 2G]$, where $g_t = \nabla f_t(w_t)$.
 
 For every $i^*$, by convexity, 
 
-$$\sum_{t=1}^T f_t(w_t) - \sum_{t=1}^T f_t(w_t^{i^*}) \leq \sum_{t=1}^T \langle g_t, w_t - w_t^{i^*} \rangle.$$
+$$\sum_{t=1}^T f_t(w_t) - \sum_{t=1}^T f_t(w_t^{i^*}) \leq \sum_{t=1}^T \langle w_t - w_t^{i^*}, g_t \rangle.$$
 
 If $p_t \in \Delta^{N}$ is computed by Hedge, the r.h.s. is bounded by
 
 $$
 \begin{aligned}
-\sum_{t=1}^T \left\langle g_t, \sum_i p_{t,i} w_t^i  \right\rangle - \sum_{t=1}^T \langle g_t, w_t^{i^*} \rangle 
-&= \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \ell_{t,i^*} 
+\sum_{t=1}^T \left\langle \sum_{i=1}^N p_{t,i} w_t^i , g_t \right\rangle - \sum_{t=1}^T \langle w_t^{i^*}, g_t \rangle 
+&= \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \ell_{t}(i^*) 
 \\
 &\lesssim G\sqrt{T \log N}.
 \end{aligned}
@@ -219,7 +220,7 @@ By setting the initial probability as $p_{1,i} \propto \frac{1}{i(i+1)}$, we can
 
 $$
 \begin{aligned}
-\text{Regret}(i^*) = \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \ell_{t,i^*} 
+\text{Regret}(i^*) = \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \ell_{t}(i^*) 
 &\lesssim \frac{1}{\varepsilon}\ln \frac{1}{p_{1,i^*}} + \varepsilon \sum_{t=1}^T \langle p_t, \ell_t^2 \rangle 
 \\
 &\lesssim \frac{1}{\varepsilon}\ln i^* + \varepsilon G^2T.
