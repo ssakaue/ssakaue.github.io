@@ -77,13 +77,20 @@ work:
     company_logo: ''
     date_start: 2025-04-01
     date_end: ''
-    #summary: 
+    #summary:
+  - position: Project Researcher
+    company_name: NII Principles of Informatics Research Division
+    company_url: 'https://www.nii.ac.jp/en/'
+    company_logo: ''
+    date_start: 2025-07-01
+    date_end: ''
+    #summary:
   - position: Visiting Scientist
     company_name: RIKEN Center for Advanced Intelligence Project
     company_url: 'https://aip.riken.jp/labs/generic_tech/seq_decision_making/?lang=en'
     company_logo: ''
-    date_start: 2024-08-01
-    date_end: 2025-03-31
+    date_start: 2025-07-01
+    date_end: ''
     #summary: 
   - position: Project Assistant Professor
     company_name: The University of Tokyo
@@ -91,7 +98,14 @@ work:
     company_logo: ''
     date_start: 2020-04-01
     date_end: 2025-03-31
-    #summary: 
+    #summary:
+  - position: Visiting Scientist
+    company_name: RIKEN Center for Advanced Intelligence Project
+    company_url: 'https://aip.riken.jp/labs/generic_tech/seq_decision_making/?lang=en'
+    company_logo: ''
+    date_start: 2024-08-01
+    date_end: 2025-03-31
+    #summary:  
   - position: Researcher
     company_name: NTT Communication Science Laboratories
     company_url: 'https://www.rd.ntt/e/cs/'
@@ -135,8 +149,12 @@ awards:
 ---
 
 ## About Me
-I am a research scientist at [CyberAgent AI Lab](https://research.cyberagent.ai/). 
+I am 
+a research scientist at [CyberAgent AI Lab](https://research.cyberagent.ai/), 
+a project researcher at [NII](https://www.nii.ac.jp/en/) (under [JST BOOST](https://www.jst.go.jp/program/boost/yr/index.html) program), 
+and 
+a visiting scientist at [RIKEN AIP](https://aip.riken.jp/labs/generic_tech/seq_decision_making/?lang=en).
 Previously, I was 
-a visiting scientist at [RIKEN AIP](https://aip.riken.jp/labs/generic_tech/seq_decision_making/?lang=en), 
-project assistant professor at [UTokyo IST](https://www.i.u-tokyo.ac.jp/index_e.shtml), 
-and researcher at [NTT CS Lab](https://www.rd.ntt/e/cs/). 
+a project assistant professor at [UTokyo IST](https://www.i.u-tokyo.ac.jp/index_e.shtml), 
+and 
+a researcher at [NTT CS Lab](https://www.rd.ntt/e/cs/). 
