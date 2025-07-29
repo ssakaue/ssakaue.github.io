@@ -25,7 +25,7 @@ Zhang et al. (2018) also provides a lower bound of $\Omega(\sqrt{T(1+P_T)})$, he
 - $\mathcal{W} \subseteq \R^d$ is a closed convex domain.
 - Bounded domain: $\|w - w'\| \leq 1$ for all $w, w' \in \mathcal{W}$ and $0 \in \mathcal{W}$.
 - $f_t \colon \mathcal{W} \to \R$ is a convex loss function at round $t$.
-- Bounded gradients: $\|\nabla f_t(w)\| \leq G$ for all $w \in \mathcal{W}$ and $t$.
+- Bounded gradient: $\|\nabla f_t(w)\| \leq G$ for all $w \in \mathcal{W}$ and $t$.
 
 ### Online Learning Protocol
 For $t = 1, 2, \ldots, T$:
@@ -130,7 +130,7 @@ $$\sum_{t=1}^T f_t(w_t) - \sum_{t=1}^T f_t(u_t) \lesssim \frac{1 + P_T}{\eta} + 
 
 Ideal learning rate: $\eta^* = \frac{1}{G}\sqrt{\frac{1 + P_T}{T}}$ (unknown).
 
-Let $\eta_{\min} = \frac{1}{G\sqrt{T}}$ and $\eta_{\max} = \frac{\sqrt{T}}{G}$, so that $\eta^* \in [\eta_{\min}, \eta_{\max}]$.
+Let $\eta_{\min} = \frac{1}{G\sqrt{T}}$ and $\eta_{\max} = \frac{1}{G}$, so that $\eta^* \in [\eta_{\min}, \eta_{\max}]$.
 
 Define a set of learning rates:  
 
@@ -157,7 +157,7 @@ $$\text{Regret}(i^*) = \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \
 ### Hedge Algorithm
 Let $\epsilon = \frac{1}{H}\sqrt{\frac{\log N}{T}}$ and assign smaller probabilities to experts with larger cumulative losses:
 
-$$p_{t,i} \propto \exp\left(-\epsilon \sum_{s=1}^{t-1} \ell_{s}(i) \right).$$ 
+$$p_{t}(i) \propto \exp\left(-\epsilon \sum_{s=1}^{t-1} \ell_{s}(i) \right).$$ 
 
 The regret against any expert $i^*$ is bounded as follows (see, e.g., [Hazan's book](https://arxiv.org/abs/1909.05207) for the proof):
 
@@ -168,7 +168,7 @@ $$\text{Regret}(i^*) = \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \
 ### Combining for Dynamic Regret Bound
 At each $t$:
 - Expert $i$ computes $w_t^i$ by OGD with $\eta_i$.
-- Learner outputs $w_t = \sum_{i=1}^N p_{t,i} w_t^i$.
+- Learner outputs $w_t = \sum_{i=1}^N p_{t}(i) w_t^i$.
 
 Define $\ell_{t}(i) \coloneqq \langle w_t^i, g_t \rangle + G \in [0, 2G]$, where $g_t = \nabla f_t(w_t)$.
 
@@ -180,7 +180,7 @@ If $p_t \in \Delta^{N}$ is computed by Hedge, the r.h.s. is bounded by
 
 $$
 \begin{aligned}
-\sum_{t=1}^T \left\langle \sum_{i=1}^N p_{t,i} w_t^i , g_t \right\rangle - \sum_{t=1}^T \langle w_t^{i^*}, g_t \rangle 
+\sum_{t=1}^T \left\langle \sum_{i=1}^N p_{t}(i) w_t^i , g_t \right\rangle - \sum_{t=1}^T \langle w_t^{i^*}, g_t \rangle 
 &= \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \ell_{t}(i^*) 
 \\
 &\lesssim G\sqrt{T \log N}.
@@ -216,12 +216,12 @@ $$\sum_{t=1}^T f_t(w_t) - \sum_{t=1}^T f_t(u_t) \lesssim G\sqrt{T(1 + P_T)}.$$
 
 Their proof eliminates the $\log\log T$ factor by a more careful analysis of the Hedge algorithm with a more sophisticated choice of initial probability. 
 <details><summary>Proof sketch</summary>
-By setting the initial probability as $p_{1,i} \propto \frac{1}{i(i+1)}$, we can show 
+By setting the initial probability as $p_{1}(i) \propto \frac{1}{i(i+1)}$, we can show 
 
 $$
 \begin{aligned}
 \text{Regret}(i^*) = \sum_{t=1}^T \langle p_t, \ell_t \rangle - \sum_{t=1}^T \ell_{t}(i^*) 
-&\lesssim \frac{1}{\varepsilon}\ln \frac{1}{p_{1,i^*}} + \varepsilon \sum_{t=1}^T \langle p_t, \ell_t^2 \rangle 
+&\lesssim \frac{1}{\varepsilon}\ln \frac{1}{p_{1}(i^*)} + \varepsilon \sum_{t=1}^T \langle p_t, \ell_t^2 \rangle 
 \\
 &\lesssim \frac{1}{\varepsilon}\ln i^* + \varepsilon G^2T.
 \end{aligned}
