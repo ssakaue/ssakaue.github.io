@@ -4,7 +4,7 @@ authors:
 - Satoru Iwata
 - Taihei Oki
 - Shinsaku Sakaue
-date: '2025'
+date: '2025-09-05'
 publication_types:
 - article-journal
 publication: '*SIAM Journal on Scientific Computing, to appear.*'
