@@ -4,10 +4,10 @@ authors:
 - Satoru Iwata
 - Taihei Oki
 - Shinsaku Sakaue
-date: '2023-12-01'
+date: '2025'
 publication_types:
-- manuscript
-publication: '*arXiv [math.NA]*'
+- article-journal
+publication: '*SIAM Journal on Scientific Computing, to appear.*'
 
 links:
 #- name: Paper
