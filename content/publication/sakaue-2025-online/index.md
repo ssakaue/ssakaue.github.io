@@ -5,10 +5,10 @@ authors:
 - Taira Tsuchiya
 - Han Bao
 - Taihei Oki
-date: '2025-01-24'
+date: '2025-09-19'
 publication_types:
-- manuscript
-publication: '*arXiv [cs.LG]*'
+- paper-conference
+publication: '*Advances in Neural Information Processing Systems (NeurIPS), to appear*'
 
 links:
 #- name: Paper

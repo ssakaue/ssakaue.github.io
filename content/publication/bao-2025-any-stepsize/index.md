@@ -4,10 +4,10 @@ authors:
 - Han Bao
 - Shinsaku Sakaue
 - Yuki Takezawa
-date: '2025-02-10'
+date: '2025-09-19'
 publication_types:
-- manuscript
-publication: '*arXiv [stat.ML, cs.LG]*'
+- paper-conference
+publication: '*Advances in Neural Information Processing Systems (NeurIPS), to appear*'
 
 links:
 #- name: Paper

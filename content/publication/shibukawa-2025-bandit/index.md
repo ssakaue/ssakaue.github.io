@@ -5,10 +5,10 @@ authors:
 - Taira Tsuchiya
 - Shinsaku Sakaue
 - Kenji Yamanishi
-date: '2025-02-27'
+date: '2025-09-19'
 publication_types:
-- manuscript
-publication: '*arXiv [cs.LG, stat.ML]*'
+- paper-conference
+publication: '*Advances in Neural Information Processing Systems (NeurIPS), to appear*'
 
 links:
 #- name: Paper
