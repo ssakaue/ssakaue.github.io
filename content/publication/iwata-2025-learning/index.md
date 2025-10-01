@@ -6,7 +6,7 @@ authors:
 date: '2025-05-20'
 publication_types:
 - paper-conference
-publication: '*International Conference on Machine Learning (ICML), to appear*'
+publication: '*International Conference on Machine Learning (ICML)*, to appear'
 
 links:
 #- name: Paper

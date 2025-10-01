@@ -8,7 +8,7 @@ authors:
 date: '2025-09-19'
 publication_types:
 - paper-conference
-publication: '*Advances in Neural Information Processing Systems (NeurIPS), to appear*'
+publication: '*Advances in Neural Information Processing Systems (NeurIPS)*, to appear'
 
 links:
 #- name: Paper
