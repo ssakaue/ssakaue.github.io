@@ -6,12 +6,12 @@ authors:
 date: '2025-05-20'
 publication_types:
 - paper-conference
-publication: '*International Conference on Machine Learning (ICML)*, to appear'
+publication: '*International Conference on Machine Learning (ICML)*'
 
 links:
 #- name: Paper
 #  url: ''
-url_pdf: ''
+url_pdf: 'https://proceedings.mlr.press/v267/iwata25a.html'
 url_code: ''
 url_dataset: ''
 url_poster: ''
