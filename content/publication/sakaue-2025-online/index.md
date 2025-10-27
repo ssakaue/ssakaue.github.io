@@ -9,6 +9,7 @@ date: '2025-09-19'
 publication_types:
 - paper-conference
 publication: '*Advances in Neural Information Processing Systems (NeurIPS)*, to appear'
+featured: true
 
 links:
 #- name: Paper
@@ -80,13 +81,22 @@ Let us refer to the formulation of Bärmann et al.---sequentially computing $\ha
 
 ### Logarithmic Regret via Ellipsoid-Based Method
 In general online linear optimization (OLO), the regret bound $O(\sqrt{T})$ is tight. So, is $R_T^{c^*} = O(\sqrt{T})$ also tight for online inverse linear optimization? 
-The answer is no: Besbes, Fonseca, and Lobel ([COLT 2021](https://proceedings.mlr.press/v134/besbes21a.html), [Oper. Res. 2023](https://pubsonline.informs.org/doi/10.1287/opre.2021.0369)) achieved $R_T^{c^*} = O(n^4 \log T)$, where $n$ is the dimension of the space where $c^*$ lies. 
+The answer is no:
+
+- Besbes et al. ([COLT 2021](https://proceedings.mlr.press/v134/besbes21a.html), [Oper. Res. 2023](https://pubsonline.informs.org/doi/10.1287/opre.2021.0369)) achieved $R_T^{c^*} = O(n^4 \log T)$, and
+- Gollapudi et al. ([NeurIPS 2021](https://proceedings.neurips.cc/paper/2021/hash/bdc6c33585d0cf5d2a8cb83141cd037f-Abstract.html)) achieved $R_T^{c^*} = O(n \log T)$, 
+
+where $n$ is the dimension of the space where $c^*$ lies. 
 
 Their idea is novel and somewhat different from the online-learning approach, which I briefly describe here. 
-Intuitively, the feedback $(x_t, X_t)$ is informative compared to that in general OLO; the optimality of $x_t \in X_t$ narrows down the possible existence of $c^*$ to the normal cone of $X_t$ at $x_t$. The method of Besbes et al. implements this idea by sequentially updating an ellipsoidal cone that is ensured to contain $c^*$, thereby inducing an appropriate amount of exploration. Based on the volume argument commonly used in the analysis of the ellipsoid method, they established $R_T^{c^*} = O(n^4 \log T)$. The runtime is polynomial in $n$ and $T$.
+Intuitively, the feedback $(x_t, X_t)$ is informative compared to that in general OLO; the optimality of $x_t \in X_t$ narrows down the possible existence of $c^*$ to the normal cone of $X_t$ at $x_t$ (or loosely, the half-space normal to $x_t - \hat x_t$). Their methods implement this idea by sequentially updating a region that is ensured to contain $c^*$. Based on the volume argument commonly used in the analysis of the ellipsoid method, they established logarithmic regret bounds. However, the per-round time complexity is polynomial in $n$ and $T$, as their methods need to maintain the region specified by up to $T$ observations.
 
 ### Our Approach: Online Newton Step
-We provide a simple and efficient method that achieves $R_T^{c^*} = O(n \log T)$, improving the previous logarithmic bound by a factor of $n^3$. 
+We provide a simple method such that: 
+
+- it achieves a regret bound of $R_T^{c^*} = O(n \log T)$ (matching the best known bound by Gollapudi et al.), and 
+- the per-round time complexity is polynomial in $n$ and independent of $T$.
+
 Our approach is close to Bärmann et al., but we apply the online Newton step (ONS) to different cost functions $f_t$. 
 
 ONS is an online convex optimization (OCO) method that achieves the logarithmic regret for exp-concave losses. 
@@ -160,7 +170,8 @@ thus establishing $R_T^{c^*} \le \tilde R_T^{c^*} = O(n\log T)$.
 ### Related Topics
 
 The above definition of $f_t$ and the proof strategy are inspired by those used in MetaGrad ([Van Erven and Koolen NeurIPS 2016](https://papers.nips.cc/paper_files/paper/2016/hash/14cfdb59b5bda1fc245aadae15b1984a-Abstract.html), [Van Erven et al. JMLR 2021](https://www.jmlr.org/papers/v22/20-1444.html)). Interestingly, using MetaGrad, instead of ONS, adds robustness against the suboptimality of the agent's solutions, which is also discussed in our paper. 
-We have also obtained a lower bound of $R_T^{c^*} = \Omega(n)$ and an upper bound of $R_T^{c^*} = O(1)$ for the case of $n=2$; the algorithm for $n=2$ is a simple variant of Besbes et al. Closing the $\log T$ gap for general $n$ is an interesting open problem.
 
-[Another paper](https://ssakaue.github.io/publication/sakaue-2025-revisiting/) of ours, which will appear in AISTATS 2025, also studies online inverse linear optimization. 
+We have also obtained a lower bound of $R_T^{c^*} = \Omega(n)$. On the other hand, Gollapudi et al. showed an upper bound of $\exp(O(n \log n))$. Closing the $\log T$ gap with polynomial dependence on $n$ is an interesting open problem.
+
+[Another paper](https://ssakaue.github.io/publication/sakaue-2025-revisiting/) of ours in AISTATS 2025 also studies online inverse linear optimization. 
 It views the problem as online convex optimization of a Fenchel–Young loss ([Blondel et al. JMLR 2020](https://jmlr.csail.mit.edu/papers/v21/19-021.html)) and presents a finite regret bound under the assumption that the agent's forward problems have a gap between the optimal and suboptimal objective values.
