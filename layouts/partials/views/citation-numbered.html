@@ -52,9 +52,9 @@
   {{ end }}
 {{ end }}
 
-<div class="pub-list-item view-citation relative pl-8 sm:pl-10" style="margin-bottom: 1rem">
-  <span class="absolute left-0 -ml-4 sm:-ml-10 w-8 text-right text-sm font-semibold text-gray-500 dark:text-gray-400">{{ $type_code }}{{ $rank }}</span>
-  <div>
+<div class="pub-list-item view-citation flex items-start gap-x-3 sm:gap-x-4" style="margin-bottom: 1rem">
+  <span class="shrink-0 w-10 text-left text-sm font-semibold text-gray-500 dark:text-gray-400 tabular-nums">{{ $type_code }}{{ $rank }}</span>
+  <div class="min-w-0">
     <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
 
   {{ if eq (site.Params.publications.citation_style | default "apa") "apa" }}
