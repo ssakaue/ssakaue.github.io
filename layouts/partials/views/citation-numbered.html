@@ -1,0 +1,100 @@
+{{ $item := .item }}
+{{ $has_attachments := partial "functions/has_attachments" $item }}
+
+{{ $pub_type_csl := "" }}
+{{ if $item.Params.publication_types }}
+  {{ if reflect.IsSlice $item.Params.publication_types }}
+    {{ $pub_type_csl = index $item.Params.publication_types 0 }}
+  {{ else }}
+    {{ $pub_type_csl = $item.Params.publication_types }}
+  {{ end }}
+{{ end }}
+
+{{ $type_letters := site.Data.publication_types.letters | default (dict "paper-conference" "C" "article-journal" "J" "article" "P" "preprint" "P") }}
+{{ $type_code := upper (index $type_letters $pub_type_csl | default "P") }}
+
+{{ $all_pubs := where site.RegularPages "Section" "publication" }}
+{{ $sorted_pubs := sort $all_pubs "Date" "desc" }}
+
+{{ $total := 0 }}
+{{ range $p := $sorted_pubs }}
+  {{ $p_type_csl := "" }}
+  {{ if $p.Params.publication_types }}
+    {{ if reflect.IsSlice $p.Params.publication_types }}
+      {{ $p_type_csl = index $p.Params.publication_types 0 }}
+    {{ else }}
+      {{ $p_type_csl = $p.Params.publication_types }}
+    {{ end }}
+  {{ end }}
+  {{ $p_code := upper (index $type_letters $p_type_csl | default "P") }}
+  {{ if eq $p_code $type_code }}
+    {{ $total = add $total 1 }}
+  {{ end }}
+{{ end }}
+
+{{ $rank := 0 }}
+{{ $counter := 0 }}
+{{ range $p := $sorted_pubs }}
+  {{ $p_type_csl := "" }}
+  {{ if $p.Params.publication_types }}
+    {{ if reflect.IsSlice $p.Params.publication_types }}
+      {{ $p_type_csl = index $p.Params.publication_types 0 }}
+    {{ else }}
+      {{ $p_type_csl = $p.Params.publication_types }}
+    {{ end }}
+  {{ end }}
+  {{ $p_code := upper (index $type_letters $p_type_csl | default "P") }}
+  {{ if eq $p_code $type_code }}
+    {{ $counter = add $counter 1 }}
+    {{ if eq $p.File.Path $item.File.Path }}
+      {{ $rank = add (sub $total $counter) 1 }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+<div class="pub-list-item view-citation relative pl-10" style="margin-bottom: 1rem">
+  <span class="absolute left-0 -ml-10 w-8 text-right text-sm font-semibold text-gray-500 dark:text-gray-400">{{ $type_code }}{{ $rank }}</span>
+  <div>
+    <i class="far fa-file-alt pub-icon" aria-hidden="true"></i>
+
+  {{ if eq (site.Params.publications.citation_style | default "apa") "apa" }}
+
+  <span class="article-metadata li-cite-author">
+    {{ partial "page_metadata_authors" $item }}
+  </span>
+  ({{- $item.Date.Format "2006" -}}).
+  <a href="{{ $item.RelPermalink }}" class="underline">{{ $item.Title }}</a>.
+  {{ if $item.Params.publication_short }}
+    {{- $item.Params.publication_short | markdownify -}}.
+  {{ else if $item.Params.publication }}
+    {{- $item.Params.publication | markdownify -}}.
+  {{ end }}
+
+  {{ if $has_attachments }}
+  <div class="flex flex-wrap space-x-3">
+    {{ partial "page_links" (dict "page" $item "is_list" 1) }}
+  </div>
+  {{ end }}
+
+  {{ else }}
+
+  <span class="article-metadata li-cite-author">
+    {{ partial "page_metadata_authors" $item }}.
+  </span>
+  <a href="{{ $item.RelPermalink }}">{{ $item.Title }}</a>.
+  {{ if $item.Params.publication_short }}
+    {{- $item.Params.publication_short | markdownify -}},
+  {{ else if $item.Params.publication }}
+    {{- $item.Params.publication | markdownify -}},
+  {{ end }}
+  {{- $item.Date.Format "2006" -}}.
+
+  {{ if $has_attachments }}
+  <div class="flex flex-wrap space-x-3">
+    {{ partial "page_links" (dict "page" $item "is_list" 1) }}
+  </div>
+  {{ end }}
+
+  {{ end }}
+  </div>
+</div>

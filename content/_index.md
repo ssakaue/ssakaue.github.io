@@ -76,13 +76,13 @@ sections:
     content:
       title: "All Papers"
       text: ""
-      count: 5
+      count: 0
       filters: 
         folders:
           - publication
         exclude_featured: false
     design:
-      view: citation
+      view: citation-numbered
   #- block: collection
   #  id: talks
   #  content:
