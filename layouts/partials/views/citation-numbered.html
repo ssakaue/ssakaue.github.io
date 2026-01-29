@@ -72,7 +72,9 @@
 
   {{ if $has_attachments }}
   <div class="flex flex-wrap space-x-3">
-    {{ partial "page_links" (dict "page" $item "is_list" 1) }}
+    {{ $links := partial "page_links" (dict "page" $item "is_list" 1) }}
+    {{ $links = replace $links "PDF" "PAPER" }}
+    {{ $links | safeHTML }}
   </div>
   {{ end }}
 
@@ -91,7 +93,9 @@
 
   {{ if $has_attachments }}
   <div class="flex flex-wrap space-x-3">
-    {{ partial "page_links" (dict "page" $item "is_list" 1) }}
+    {{ $links := partial "page_links" (dict "page" $item "is_list" 1) }}
+    {{ $links = replace $links "PDF" "PAPER" }}
+    {{ $links | safeHTML }}
   </div>
   {{ end }}
 
