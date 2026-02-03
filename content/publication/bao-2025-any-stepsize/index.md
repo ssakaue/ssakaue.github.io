@@ -1,5 +1,5 @@
 ---
-title: 'Any-stepsize gradient descent for separable data under Fenchel–Young losses'
+title: Any-stepsize gradient descent for separable data under Fenchel–Young losses
 authors:
 - Han Bao
 - Shinsaku Sakaue

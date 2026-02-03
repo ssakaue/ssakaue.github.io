@@ -1,5 +1,5 @@
 ---
-title: 'Finite and corruption-robust regret bounds in online inverse linear optimization under M-convex action sets'
+title: Finite and corruption-robust regret bounds in online inverse linear optimization under M-convex action sets
 authors:
 - Taihei Oki
 - Shinsaku Sakaue
