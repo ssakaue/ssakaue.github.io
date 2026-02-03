@@ -1,5 +1,5 @@
 ---
-title: Non-Stationary online structured prediction with surrogate losses
+title: Non-stationary online structured prediction with surrogate losses
 authors:
 - Shinsaku Sakaue
 - Han Bao
