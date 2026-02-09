@@ -12,7 +12,7 @@ publication: '*SIAM Journal on Scientific Computing, to appear.*'
 links:
 #- name: Paper
 #  url: ''
-url_pdf: 'https://arxiv.org/abs/2312.05470'
+url_pdf: 'https://epubs.siam.org/doi/full/10.1137/24M1668639'
 url_code: ''
 url_dataset: ''
 url_poster: ''
