@@ -7,7 +7,7 @@ authors:
 date: '2025-09-05'
 publication_types:
 - article-journal
-publication: '*SIAM Journal on Scientific Computing, to appear.*'
+publication: '*SIAM Journal on Scientific Computing.*'
 
 links:
 #- name: Paper
