@@ -1,5 +1,5 @@
 ---
-title: Simple Projection-Free Algorithm for Contextual Recommendation with Logarithmic Regret and Robustness
+title: Simple projection-free algorithm for contextual recommendation with logarithmic regret and robustness
 authors:
 - Shinsaku Sakaue
 date: '2026-03-21'

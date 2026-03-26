@@ -1,5 +1,5 @@
 ---
-title: From Average Sensitivity to Small-Loss Regret Bounds under Random-Order Model
+title: From average sensitivity to small-loss regret bounds under random-order model
 authors:
 - Shinsaku Sakaue
 - Yuichi Yoshida
