@@ -4,10 +4,10 @@ authors:
 - Shinsaku Sakaue
 - Han Bao
 - Yuzhou Cao
-date: '2025-10-09'
+date: '2026-05-01'
 publication_types:
-- preprint
-publication: '*arXiv [cs.LG]*'
+- paper-conference
+publication: '*International Conference on Machine Learning (ICML)*, to appear'
 
 links:
 #- name: Paper
