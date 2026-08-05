@@ -5,7 +5,7 @@ authors:
 - Naoyuki Kamiyama
 - Shinsaku Sakaue
 - Taira Tsuchiya
-date: '2026-08-21'
+date: '2026-05-27'
 publication_types:
 - paper-conference
 publication: '*International Joint Conference on Artificial Intelligence (IJCAI)*, to appear'
