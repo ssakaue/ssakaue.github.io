@@ -10,7 +10,7 @@
   {{ end }}
 {{ end }}
 
-{{ $type_letters := site.Data.publication_types.letters | default (dict "paper-conference" "C" "article-journal" "J" "article" "P" "preprint" "P") }}
+{{ $type_letters := site.Data.publication_types.letters | default (dict "paper-conference" "C" "paper-workshop" "W" "article-journal" "J" "article" "P" "preprint" "P") }}
 {{ $type_code := upper (index $type_letters $pub_type_csl | default "P") }}
 
 {{ $all_pubs := where site.RegularPages "Section" "publication" }}
