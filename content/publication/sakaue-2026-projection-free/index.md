@@ -2,10 +2,10 @@
 title: Simple projection-free algorithm for contextual recommendation with logarithmic regret and robustness
 authors:
 - Shinsaku Sakaue
-date: '2026-03-21'
+date: '2026-09-25'
 publication_types:
-- preprint
-publication: '*arXiv [cs.LG]*'
+- paper-conference
+publication: '*Advances in Neural Information Processing Systems (NeurIPS)*, to appear'
 
 links:
 #- name: Paper

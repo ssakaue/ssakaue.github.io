@@ -3,10 +3,10 @@ title: From average sensitivity to small-loss regret bounds under random-order m
 authors:
 - Shinsaku Sakaue
 - Yuichi Yoshida
-date: '2026-02-10'
+date: '2026-09-25'
 publication_types:
-- preprint
-publication: '*arXiv [stat.ML]*'
+- paper-conference
+publication: '*Advances in Neural Information Processing Systems (NeurIPS)*, **Oral**, to appear'
 
 links:
 #- name: Paper
