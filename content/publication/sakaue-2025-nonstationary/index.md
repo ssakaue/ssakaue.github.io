@@ -7,12 +7,12 @@ authors:
 date: '2026-05-01'
 publication_types:
 - paper-conference
-publication: '*International Conference on Machine Learning (ICML)*, to appear'
+publication: '*International Conference on Machine Learning (ICML)*'
 
 links:
 #- name: Paper
 #  url: ''
-url_pdf: 'https://arxiv.org/pdf/2510.07086'
+url_pdf: 'https://proceedings.mlr.press/v306/sakaue26a.html'
 url_code: ''
 url_dataset: ''
 url_poster: ''

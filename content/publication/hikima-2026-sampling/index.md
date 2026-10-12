@@ -8,12 +8,12 @@ authors:
 date: '2026-05-27'
 publication_types:
 - paper-conference
-publication: '*International Joint Conference on Artificial Intelligence (IJCAI)*, to appear'
+publication: '*International Joint Conference on Artificial Intelligence (IJCAI)*'
 
 links:
 #- name: Paper
 #  url: ''
-url_pdf: ''
+url_pdf: 'https://www.ijcai.org/proceedings/2026/484'
 url_code: ''
 url_dataset: ''
 url_poster: ''
